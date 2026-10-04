@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="shortcut icon" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qaidy Rasyid Hidayat — Portfolio</title>
@@ -11,13 +12,17 @@
     <!-- Google Fonts: Bricolage Grotesque & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -42,31 +47,38 @@
         .brutalist-border-md {
             border: 3px solid #000000;
         }
+
         .brutalist-border-sm {
             border: 2px solid #000000;
         }
+
         .brutalist-shadow {
             box-shadow: 4px 4px 0px 0px #000000;
         }
+
         .brutalist-shadow-lg {
             box-shadow: 6px 6px 0px 0px #000000;
         }
+
         .brutalist-shadow-sm {
             box-shadow: 2px 2px 0px 0px #000000;
         }
+
         .active-dot {
             width: 40px;
             background-color: #FFE600;
         }
     </style>
 </head>
+
 <body class="bg-brandBg text-darkText font-body selection:bg-primary selection:text-darkText overflow-x-hidden">
 
     <!-- Top Sticky Header -->
     <header class="sticky top-0 bg-brandBg border-b-[3px] border-darkText z-50" data-aos="fade-down">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo Section -->
-            <a href="#home" class="flex items-center gap-2 font-heading font-black text-2xl uppercase tracking-wider bg-primary px-3 py-1.5 brutalist-border-sm brutalist-shadow-sm transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none">
+            <a href="#home"
+                class="flex items-center gap-2 font-heading font-black text-2xl uppercase tracking-wider bg-primary px-3 py-1.5 brutalist-border-sm brutalist-shadow-sm transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none">
                 QAIDY
             </a>
 
@@ -81,12 +93,14 @@
 
             <!-- Action Buttons & Hamburger (Mobile) -->
             <div class="flex items-center gap-3">
-                <a href="#contact" class="hidden sm:inline-block font-heading font-black text-base bg-primary px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                <a href="#contact"
+                    class="hidden sm:inline-block font-heading font-black text-base bg-primary px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                     Hire Me
                 </a>
-                
+
                 <!-- Responsive Hamburger Menu Trigger -->
-                <button id="menu-toggle-btn" aria-label="Toggle Menu" class="md:hidden flex flex-col justify-center items-center w-12 h-12 bg-white brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all active:translate-x-[1px] active:translate-y-[1px] active:shadow-none">
+                <button id="menu-toggle-btn" aria-label="Toggle Menu"
+                    class="md:hidden flex flex-col justify-center items-center w-12 h-12 bg-white brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all active:translate-x-[1px] active:translate-y-[1px] active:shadow-none">
                     <span class="w-6 h-0.5 bg-black my-0.5 transition-all duration-300" id="hamburger-line-1"></span>
                     <span class="w-6 h-0.5 bg-black my-0.5 transition-all duration-300" id="hamburger-line-2"></span>
                     <span class="w-6 h-0.5 bg-black my-0.5 transition-all duration-300" id="hamburger-line-3"></span>
@@ -96,16 +110,24 @@
     </header>
 
     <!-- Mobile Navigation Drawer Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-brandBg/95 z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-between p-8 border-l-[4px] border-black">
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-brandBg/95 z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-between p-8 border-l-[4px] border-black">
         <div class="flex flex-col space-y-6 pt-20">
-            <a href="#home" class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Home</a>
-            <a href="#services" class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">What I Do</a>
-            <a href="#skills" class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Skills</a>
-            <a href="#experience" class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Experience</a>
-            <a href="#project" class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Project</a>
+            <a href="#home"
+                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Home</a>
+            <a href="#services"
+                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">What
+                I Do</a>
+            <a href="#skills"
+                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Skills</a>
+            <a href="#experience"
+                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Experience</a>
+            <a href="#project"
+                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Project</a>
         </div>
         <div class="w-full">
-            <a href="#contact" class="mobile-nav-link w-full text-center font-heading font-black text-xl bg-primary block py-4 rounded-xl brutalist-border-md brutalist-shadow">
+            <a href="#contact"
+                class="mobile-nav-link w-full text-center font-heading font-black text-xl bg-primary block py-4 rounded-xl brutalist-border-md brutalist-shadow">
                 Hire Me Now
             </a>
         </div>
@@ -116,29 +138,39 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <!-- Left Grid Content -->
             <div class="lg:col-span-7 flex flex-col items-start space-y-6">
-                <span class="text-lg md:text-xl font-heading font-bold flex items-center gap-2" data-aos="fade-up" data-aos-delay="100">
+                <span class="text-lg md:text-xl font-heading font-bold flex items-center gap-2" data-aos="fade-up"
+                    data-aos-delay="100">
                     Hi There <span class="animate-bounce"><i class="fa-solid fa-hand"></i></span>
                 </span>
-                <h1 class="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight" data-aos="fade-up" data-aos-delay="200">
-                    I'm <span class="text-primary bg-darkText px-4 py-1.5 brutalist-border-sm inline-block transform -rotate-1">Qaidy Rasyid</span> Hidayat
+                <h1 class="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight"
+                    data-aos="fade-up" data-aos-delay="200">
+                    I'm <span
+                        class="text-primary bg-darkText px-4 py-1.5 brutalist-border-sm inline-block transform -rotate-1">Qaidy
+                        Rasyid</span> Hidayat
                 </h1>
-                
+
                 <div class="w-full" data-aos="fade-right" data-aos-delay="300">
                     <!-- Custom Horizontal Line Divider -->
                     <div class="h-1 bg-darkText w-full my-6 relative">
-                        <span class="absolute -top-3.5 left-8 sm:left-12 bg-brandBg px-4 font-heading font-extrabold text-md sm:text-xl border-x-2 border-darkText">
+                        <span
+                            class="absolute -top-3.5 left-8 sm:left-12 bg-brandBg px-4 font-heading font-extrabold text-md sm:text-xl border-x-2 border-darkText">
                             Flutter Developer | Full Stack Developer
                         </span>
                     </div>
                 </div>
 
-                <p class="text-darkText/80 text-base md:text-lg max-w-xl font-medium leading-relaxed" data-aos="fade-up" data-aos-delay="400">
-                    Mobile & Web Developer experienced in Flutter, PHP, Laravel, Supabase, and front-end technologies like HTML, CSS, JavaScript, Tailwind & Bootstrap. A quick learner, team player, and ready for new challenges.
+                <p class="text-darkText/80 text-base md:text-lg max-w-xl font-medium leading-relaxed" data-aos="fade-up"
+                    data-aos-delay="400">
+                    Mobile & Web Developer experienced in Flutter, PHP, Laravel, Supabase, and front-end technologies
+                    like HTML, CSS, JavaScript, Tailwind & Bootstrap. A quick learner, team player, and ready for new
+                    challenges.
                 </p>
 
                 <!-- Action Button Grid -->
                 <div class="flex flex-wrap gap-4 pt-4" data-aos="fade-up" data-aos-delay="500">
-                    <a href="https://drive.google.com/file/d/1vuhecKcPA86ozy_SgEuX9vcvOt0qRTN7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="font-heading font-black text-base bg-primary text-darkText px-6 py-3.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
+                    <a href="https://drive.google.com/file/d/1vuhecKcPA86ozy_SgEuX9vcvOt0qRTN7/view?usp=sharing"
+                        target="_blank" rel="noopener noreferrer"
+                        class="font-heading font-black text-base bg-primary text-darkText px-6 py-3.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
                         <i class="fa-solid fa-file-arrow-down"></i> Download CV
                     </a>
                 </div>
@@ -149,23 +181,33 @@
                 <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
                     <!-- Starburst SVG element (Top Right) -->
                     <div class="absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 text-primary animate-pulse z-10">
-                        <svg viewBox="0 0 100 100" fill="currentColor" class="w-full h-full drop-shadow-[2px_2px_0_#000]">
-                            <path d="M50 0 L58 35 L90 20 L70 50 L100 58 L70 66 L90 90 L58 75 L50 100 L42 75 L10 90 L30 66 L0 58 L30 50 L10 20 L42 35 Z" stroke="#000000" stroke-width="4" stroke-linejoin="miter"></path>
+                        <svg viewBox="0 0 100 100" fill="currentColor"
+                            class="w-full h-full drop-shadow-[2px_2px_0_#000]">
+                            <path
+                                d="M50 0 L58 35 L90 20 L70 50 L100 58 L70 66 L90 90 L58 75 L50 100 L42 75 L10 90 L30 66 L0 58 L30 50 L10 20 L42 35 Z"
+                                stroke="#000000" stroke-width="4" stroke-linejoin="miter"></path>
                         </svg>
                     </div>
 
                     <!-- Zigzag element (Bottom Left) -->
-                    <div class="absolute -bottom-4 -left-4 w-20 h-10 sm:w-24 sm:h-12 text-secondary z-10 animate-bounce">
-                        <svg viewBox="0 0 100 40" fill="currentColor" class="w-full h-full drop-shadow-[2px_2px_0_#000]">
-                            <path d="M0 20 L20 0 L40 20 L60 0 L80 20 L100 0 L100 20 L80 40 L60 20 L40 40 L20 20 L0 40 Z" stroke="#000000" stroke-width="3" stroke-linejoin="miter"></path>
+                    <div
+                        class="absolute -bottom-4 -left-4 w-20 h-10 sm:w-24 sm:h-12 text-secondary z-10 animate-bounce">
+                        <svg viewBox="0 0 100 40" fill="currentColor"
+                            class="w-full h-full drop-shadow-[2px_2px_0_#000]">
+                            <path d="M0 20 L20 0 L40 20 L60 0 L80 20 L100 0 L100 20 L80 40 L60 20 L40 40 L20 20 L0 40 Z"
+                                stroke="#000000" stroke-width="3" stroke-linejoin="miter"></path>
                         </svg>
                     </div>
 
                     <!-- Core Circular Profile Picture Mask -->
-                    <div class="w-full h-full rounded-full overflow-hidden brutalist-border-md bg-white flex items-center justify-center relative">
+                    <div
+                        class="w-full h-full rounded-full overflow-hidden brutalist-border-md bg-white flex items-center justify-center relative">
                         <div class="absolute inset-0 bg-primary/10"></div>
                         <div class="z-10 absolute inset-0 flex items-center justify-center p-4">
-                            <div class="w-full h-full rounded-full bg-cover bg-center border-[3px] border-black" style="background-image: url('profile.png');" onerror="this.style.backgroundImage='url(https://placehold.co/400x400/FFE600/000000?text=Profile)'"></div>
+                            <div class="w-full h-full rounded-full bg-cover bg-center border-[3px] border-black"
+                                style="background-image: url('assets/profile.png');"
+                                onerror="this.style.backgroundImage='url(https://placehold.co/400x400/FFE600/000000?text=Profile)'">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -188,10 +230,13 @@
             <!-- Services Row Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Service 1 -->
-                <div class="bg-surface p-8 rounded-lg brutalist-border-md brutalist-shadow flex flex-col items-start space-y-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-[#D1C4E9] rounded-lg border-2 border-darkText flex items-center justify-center brutalist-shadow-sm">
+                <div class="bg-surface p-8 rounded-lg brutalist-border-md brutalist-shadow flex flex-col items-start space-y-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-12 h-12 bg-[#D1C4E9] rounded-lg border-2 border-darkText flex items-center justify-center brutalist-shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6" fill="#000000">
-                            <path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.37zm.159 11.26l-6.077 6.078 6.077 6.078 3.7-3.699-2.378-2.379 2.378-2.378-3.7-3.7z"/>
+                            <path
+                                d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.37zm.159 11.26l-6.077 6.078 6.077 6.078 3.7-3.699-2.378-2.379 2.378-2.378-3.7-3.7z" />
                         </svg>
                     </div>
                     <h3 class="font-heading font-black text-2xl">Flutter Developer</h3>
@@ -201,24 +246,30 @@
                 </div>
 
                 <!-- Service 2 -->
-                <div class="bg-surface p-8 rounded-lg brutalist-border-md brutalist-shadow flex flex-col items-start space-y-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-[#F8BBD0] rounded-lg border-2 border-darkText flex items-center justify-center brutalist-shadow-sm">
+                <div class="bg-surface p-8 rounded-lg brutalist-border-md brutalist-shadow flex flex-col items-start space-y-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-12 h-12 bg-[#F8BBD0] rounded-lg border-2 border-darkText flex items-center justify-center brutalist-shadow-sm">
                         <i class="fa-solid fa-desktop text-xl text-darkText"></i>
                     </div>
                     <h3 class="font-heading font-black text-2xl">Front End Developer</h3>
                     <p class="text-darkText/80 text-sm font-medium leading-relaxed">
-                        I build responsive and user-friendly websites using HTML, CSS, JavaScript, Tailwind CSS, and Bootstrap.
+                        I build responsive and user-friendly websites using HTML, CSS, JavaScript, Tailwind CSS, and
+                        Bootstrap.
                     </p>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="bg-surface p-8 rounded-lg brutalist-border-md brutalist-shadow flex flex-col items-start space-y-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 bg-[#C8E6C9] rounded-lg border-2 border-darkText flex items-center justify-center brutalist-shadow-sm">
+                <div class="bg-surface p-8 rounded-lg brutalist-border-md brutalist-shadow flex flex-col items-start space-y-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-12 h-12 bg-[#C8E6C9] rounded-lg border-2 border-darkText flex items-center justify-center brutalist-shadow-sm">
                         <i class="fa-solid fa-server text-xl text-darkText"></i>
                     </div>
                     <h3 class="font-heading font-black text-2xl">Back End Developer</h3>
                     <p class="text-darkText/80 text-sm font-medium leading-relaxed">
-                        I build server-side logic and APIs using PHP & Laravel, with database integration via MySQL and Supabase.
+                        I build server-side logic and APIs using PHP & Laravel, with database integration via MySQL and
+                        Supabase.
                     </p>
                 </div>
             </div>
@@ -239,34 +290,44 @@
 
             <!-- Intersecting badge list cloud elements -->
             <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                <div class="font-heading font-black text-base bg-primary text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm transition-transform cursor-default select-none" data-aos="zoom-in" data-aos-delay="100">
+                <div class="font-heading font-black text-base bg-primary text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm transition-transform cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="100">
                     HTML
                 </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none" data-aos="zoom-in" data-aos-delay="200">
+                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="200">
                     CSS
                 </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none" data-aos="zoom-in" data-aos-delay="300">
+                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="300">
                     JavaScript
                 </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none" data-aos="zoom-in" data-aos-delay="400">
+                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="400">
                     PHP
                 </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none" data-aos="zoom-in" data-aos-delay="500">
+                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="500">
                     Laravel
                 </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none" data-aos="zoom-in" data-aos-delay="600">
+                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="600">
                     Dart
                 </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none" data-aos="zoom-in" data-aos-delay="700">
+                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="700">
                     Tailwind CSS
                 </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none" data-aos="zoom-in" data-aos-delay="800">
+                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="800">
                     Bootstrap
                 </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none" data-aos="zoom-in" data-aos-delay="900">
+                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="900">
                     Supabase
                 </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none" data-aos="zoom-in" data-aos-delay="1000">
+                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
+                    data-aos="zoom-in" data-aos-delay="1000">
                     Flutter
                 </div>
             </div>
@@ -291,9 +352,11 @@
                 <div class="border-b-[3px] border-dashed border-darkText/30 pb-10 last:border-none" data-aos="fade-up">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
                         <h3 class="text-2xl font-heading font-black text-darkText">SMPIT Persada Bhakti</h3>
-                        <span class="font-heading font-extrabold text-sm bg-primary px-3 py-1.5 brutalist-border-sm">Bekasi</span>
+                        <span
+                            class="font-heading font-extrabold text-sm bg-primary px-3 py-1.5 brutalist-border-sm">Bekasi</span>
                     </div>
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 text-sm font-bold text-darkText/70">
+                    <div
+                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 text-sm font-bold text-darkText/70">
                         <span>IT Trainer</span>
                         <span>Bekasi, Indonesia</span>
                     </div>
@@ -308,9 +371,11 @@
                 <div class="border-b-[3px] border-dashed border-darkText/30 pb-10 last:border-none" data-aos="fade-up">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
                         <h3 class="text-2xl font-heading font-black text-darkText">SMPIT Cikal Harapan</h3>
-                        <span class="font-heading font-extrabold text-sm bg-primary px-3 py-1.5 brutalist-border-sm">BSD City</span>
+                        <span class="font-heading font-extrabold text-sm bg-primary px-3 py-1.5 brutalist-border-sm">BSD
+                            City</span>
                     </div>
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 text-sm font-bold text-darkText/70">
+                    <div
+                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 text-sm font-bold text-darkText/70">
                         <span>IT Trainer</span>
                         <span>BSD City, Tangerang Selatan</span>
                     </div>
@@ -325,15 +390,18 @@
                 <div class="border-b-[3px] border-dashed border-darkText/30 pb-10 last:border-none" data-aos="fade-up">
                     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
                         <h3 class="text-2xl font-heading font-black text-darkText">SMAN 3 Yogyakarta</h3>
-                        <span class="font-heading font-extrabold text-sm bg-primary px-3 py-1.5 brutalist-border-sm">Yogyakarta</span>
+                        <span
+                            class="font-heading font-extrabold text-sm bg-primary px-3 py-1.5 brutalist-border-sm">Yogyakarta</span>
                     </div>
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 text-sm font-bold text-darkText/70">
+                    <div
+                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 text-sm font-bold text-darkText/70">
                         <span>IT Trainer</span>
                         <span>Yogyakarta, Indonesia</span>
                     </div>
                     <ul class="list-disc list-inside space-y-2 text-darkText/80 text-sm font-medium">
                         <li>Conducted web development training sessions with focus on real-world project building</li>
-                        <li>Taught HTML, CSS, JavaScript, and introduced students to frameworks like Bootstrap & Tailwind</li>
+                        <li>Taught HTML, CSS, JavaScript, and introduced students to frameworks like Bootstrap &
+                            Tailwind</li>
                         <li>Mentored students through individual projects and helped debug their code hands-on</li>
                     </ul>
                 </div>
@@ -354,26 +422,37 @@
             </div>
 
             <!-- Active Sliding Card Showcase Frame -->
-            <div id="project-slider-container" class="relative overflow-hidden min-h-[500px] lg:min-h-[400px]" data-aos="fade-up" data-aos-delay="200">
+            <div id="project-slider-container" class="relative overflow-hidden min-h-[500px] lg:min-h-[400px]"
+                data-aos="fade-up" data-aos-delay="200">
                 <div id="slider-track" class="flex transition-transform duration-500 ease-in-out">
-                    
+
                     <!-- Slide 1: CRM Design -->
                     <div class="w-full flex-shrink-0 px-2">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brandBg p-4">
                             <!-- Left Details Box -->
                             <div class="flex flex-col items-start space-y-6">
-                                <span class="bg-[#D1C4E9] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT #1 — AyoRental</span>
+                                <span
+                                    class="bg-[#D1C4E9] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT
+                                    #1 — AyoRental</span>
                                 <h3 class="font-heading font-black text-3xl sm:text-4xl">AyoRental</h3>
                                 <p class="text-darkText/80 text-base leading-relaxed max-w-lg font-medium">
-                                    AyoRental is a web-based car rental platform that allows users to browse, book, and rent cars with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Supabase for real-time data management.
+                                    AyoRental is a web-based car rental platform that allows users to browse, book, and
+                                    rent cars with ease. It features a modern, user-friendly interface with advanced
+                                    filtering options and seamless integration with Supabase for real-time data
+                                    management.
                                 </p>
-                                <button class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-                                    <a href="https://github.com/Qaidy/AyoRental" target="_blank" rel="noopener noreferrer" class="text-darkText">More Detail <i class="fa-solid fa-arrow-right"></i></a>  
+                                <button
+                                    class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
+                                    <a href="https://github.com/Qaidy/AyoRental" target="_blank"
+                                        rel="noopener noreferrer" class="text-darkText">More Detail <i
+                                            class="fa-solid fa-arrow-right"></i></a>
                                 </button>
                             </div>
                             <!-- Right Picture Container Mockup -->
-                            <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
-                                <img src="ayorental.png" alt="AyoRental Preview" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/800x600/FFE600/000000?text=AyoRental'" />
+                            <div
+                                class="relative w-full rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
+                                <img src="assets/rental.png" alt="AyoRental Preview" class="w-full h-auto block"
+                                    onerror="this.src='https://placehold.co/800x600/FFE600/000000?text=AyoRental'" />
                             </div>
                         </div>
                     </div>
@@ -383,18 +462,28 @@
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brandBg p-4">
                             <!-- Left Details Box -->
                             <div class="flex flex-col items-start space-y-6">
-                                <span class="bg-[#F8BBD0] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT #2 — BLOSSOM</span>
+                                <span
+                                    class="bg-[#F8BBD0] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT
+                                    #2 — BLOSSOM</span>
                                 <h3 class="font-heading font-black text-3xl sm:text-4xl">Blossom</h3>
                                 <p class="text-darkText/80 text-base leading-relaxed max-w-lg font-medium">
-                                    Blossom is an e-commerce platform that allows users to browse, purchase, and manage their orders with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Stripe for real-time payment processing.
+                                    Blossom is an e-commerce platform that allows users to browse, purchase, and manage
+                                    their orders with ease. It features a modern, user-friendly interface with advanced
+                                    filtering options and seamless integration with Stripe for real-time payment
+                                    processing.
                                 </p>
-                                <button class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-                                    <a href="https://github.com/Qaidy/Blossom.git" target="_blank" rel="noopener noreferrer" class="text-darkText">More Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                <button
+                                    class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
+                                    <a href="https://github.com/Qaidy/Blossom.git" target="_blank"
+                                        rel="noopener noreferrer" class="text-darkText">More Detail <i
+                                            class="fa-solid fa-arrow-right"></i></a>
                                 </button>
                             </div>
                             <!-- Right Picture Container Mockup -->
-                            <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
-                                <img src="blossom.png" alt="Blossom Preview" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/800x600/FFE600/000000?text=Blossom'" />
+                            <div
+                                class="relative w-full rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
+                                <img src="assets/blossom.png" alt="Blossom Preview" class="w-full h-auto block"
+                                    onerror="this.src='https://placehold.co/800x600/FFE600/000000?text=Blossom'" />
                             </div>
                         </div>
                     </div>
@@ -404,18 +493,28 @@
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brandBg p-4">
                             <!-- Left Details Box -->
                             <div class="flex flex-col items-start space-y-6">
-                                <span class="bg-[#C8E6C9] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT #3 — E LIBRARY</span>
-                                <h3 class="font-heading font-black text-3xl sm:text-4xl">E-Library</h3>
+                                <span
+                                    class="bg-[#C8E6C9] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT
+                                    #3 — VAULTIFY</span>
+                                <h3 class="font-heading font-black text-3xl sm:text-4xl">Vaultify</h3>
                                 <p class="text-darkText/80 text-base leading-relaxed max-w-lg font-medium">
-                                    E-Library is a digital library platform that allows users to search, read, and manage their book collection online. It features an intuitive browsing experience with category filters, book previews, and a clean reading interface.
+                                    Vaultify is a production-ready, full-stack personal financial management platform
+                                    designed to help users effortlessly track their wealth with real-time insights.
+                                    Built with an emphasis on clean UI/UX and performance, Vaultify bridges the gap
+                                    between complex financial tracking and intuitive design.
                                 </p>
-                                <button class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-                                    <a href="https://github.com/Qaidy/E_Library.git" target="_blank" rel="noopener noreferrer" class="text-darkText">More Detail <i class="fa-solid fa-arrow-right"></i></a>
+                                <button
+                                    class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
+                                    <a href="https://github.com/Qaidy/vaultify.git" target="_blank"
+                                        rel="noopener noreferrer" class="text-darkText">More Detail <i
+                                            class="fa-solid fa-arrow-right"></i></a>
                                 </button>
                             </div>
                             <!-- Right Picture Container Mockup -->
-                            <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
-                                <img src="library.png" alt="E Library Preview" class="w-full h-full object-cover object-top" onerror="this.src='https://placehold.co/800x600/FFE600/000000?text=E+Library'" />
+                            <div
+                                class="relative w-full rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
+                                <img src="assets/vault.png" alt="Vaultify Preview" class="w-full h-auto block"
+                                    onerror="this.src='https://placehold.co/800x600/FFE600/000000?text=Vaultify'" />
                             </div>
                         </div>
                     </div>
@@ -425,18 +524,23 @@
 
             <!-- Controls Overlay with Classic Arrow Keys Style -->
             <div class="flex justify-center items-center gap-6 mt-8">
-                <button id="slider-prev-btn" aria-label="Previous Slide" class="w-12 h-12 rounded-full bg-white text-darkText brutalist-border-sm brutalist-shadow hover:bg-primary flex items-center justify-center transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+                <button id="slider-prev-btn" aria-label="Previous Slide"
+                    class="w-12 h-12 rounded-full bg-white text-darkText brutalist-border-sm brutalist-shadow hover:bg-primary flex items-center justify-center transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
                     <i class="fa-solid fa-arrow-left text-xl"></i>
                 </button>
-                
+
                 <!-- Page Indicator Dots Matching Graphic -->
                 <div class="flex gap-3" id="indicator-container">
-                    <button class="indicator-dot w-10 h-3 bg-primary brutalist-border-sm rounded-full transition-all" data-index="0"></button>
-                    <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all" data-index="1"></button>
-                    <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all" data-index="2"></button>
+                    <button class="indicator-dot w-10 h-3 bg-primary brutalist-border-sm rounded-full transition-all"
+                        data-index="0"></button>
+                    <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all"
+                        data-index="1"></button>
+                    <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all"
+                        data-index="2"></button>
                 </div>
 
-                <button id="slider-next-btn" aria-label="Next Slide" class="w-12 h-12 rounded-full bg-white text-darkText brutalist-border-sm brutalist-shadow hover:bg-primary flex items-center justify-center transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
+                <button id="slider-next-btn" aria-label="Next Slide"
+                    class="w-12 h-12 rounded-full bg-white text-darkText brutalist-border-sm brutalist-shadow hover:bg-primary flex items-center justify-center transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
                     <i class="fa-solid fa-arrow-right text-xl"></i>
                 </button>
             </div>
@@ -448,14 +552,16 @@
                     <i class="fa-solid fa-code text-xs"></i>
                     <div class="h-px w-16 bg-darkText/20"></div>
                 </div>
-                <p class="font-heading font-black text-sm sm:text-base text-darkText/50 uppercase tracking-widest text-center">
+                <p
+                    class="font-heading font-black text-sm sm:text-base text-darkText/50 uppercase tracking-widest text-center">
                     These are just a few highlights
                 </p>
                 <a href="https://github.com/Qaidy?tab=repositories" target="_blank" rel="noopener noreferrer"
-                   class="group flex items-center gap-3 border-2 border-dashed border-darkText/30 hover:border-darkText bg-transparent hover:bg-primary px-6 py-3 rounded-lg font-heading font-black text-base text-darkText transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
+                    class="group flex items-center gap-3 border-2 border-dashed border-darkText/30 hover:border-darkText bg-transparent hover:bg-primary px-6 py-3 rounded-lg font-heading font-black text-base text-darkText transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
                     <i class="fa-brands fa-github text-xl transition-transform duration-300 group-hover:rotate-12"></i>
                     <span>Explore All My Projects on GitHub</span>
-                    <i class="fa-solid fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
+                    <i
+                        class="fa-solid fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
                 </a>
             </div>
         </div>
@@ -463,14 +569,16 @@
 
     <!-- Project Invitation Section / CTA Box -->
     <section id="contact" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-brandBg brutalist-border-md brutalist-shadow-lg p-12 text-center rounded-xl relative overflow-hidden flex flex-col items-center justify-center space-y-6" data-aos="zoom-in">
+        <div class="bg-brandBg brutalist-border-md brutalist-shadow-lg p-12 text-center rounded-xl relative overflow-hidden flex flex-col items-center justify-center space-y-6"
+            data-aos="zoom-in">
             <h2 class="font-heading font-black text-2xl sm:text-3xl md:text-5xl text-darkText max-w-2xl leading-tight">
                 Have a project or want to work with me?
             </h2>
             <p class="text-sm sm:text-lg font-heading font-extrabold text-darkText/70 max-w-md">
                 Please contact me by clicking the button below
             </p>
-            <a href="mailto:qaidyidn@gmail.com" class="font-heading font-black text-lg bg-primary text-darkText px-8 py-4 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-block">
+            <a href="mailto:qaidyidn@gmail.com"
+                class="font-heading font-black text-lg bg-primary text-darkText px-8 py-4 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-block">
                 Hire Me <i class="fa-solid fa-arrow-right"></i>
             </a>
         </div>
@@ -478,7 +586,8 @@
 
     <!-- Dark Footer -->
     <footer class="bg-black text-white py-12 border-t-[3px] border-darkText">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
             <!-- Left Copyright text -->
             <p class="text-sm font-semibold tracking-wider text-gray-400">
                 &copy; 2026 Qaidy Rasyid Hidayat. All rights reserved.
@@ -487,15 +596,19 @@
             <!-- Right Social Profiles in circular format -->
             <div class="flex items-center gap-4">
                 <!-- GitHub -->
-                <a href="https://github.com/Qaidy" target="_blank" aria-label="GitHub Profile" class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all bg-transparent hover:bg-primary hover:text-black hover:border-black">
+                <a href="https://github.com/Qaidy" target="_blank" aria-label="GitHub Profile"
+                    class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all bg-transparent hover:bg-primary hover:text-black hover:border-black">
                     <i class="fa-brands fa-github text-lg"></i>
                 </a>
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/qaidy-rasyid-810633376/" target="_blank" aria-label="LinkedIn Profile" class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all bg-transparent hover:bg-primary hover:text-black hover:border-black">
+                <a href="https://www.linkedin.com/in/qaidy-rasyid-810633376/" target="_blank"
+                    aria-label="LinkedIn Profile"
+                    class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all bg-transparent hover:bg-primary hover:text-black hover:border-black">
                     <i class="fa-brands fa-linkedin-in text-lg"></i>
                 </a>
                 <!-- Instagram -->
-                <a href="https://www.instagram.com/qaidyrsyd/" target="_blank" aria-label="Instagram Profile" class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all bg-transparent hover:bg-primary hover:text-black hover:border-black">
+                <a href="https://www.instagram.com/qaidyrsyd/" target="_blank" aria-label="Instagram Profile"
+                    class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all bg-transparent hover:bg-primary hover:text-black hover:border-black">
                     <i class="fa-brands fa-instagram text-lg"></i>
                 </a>
             </div>
@@ -512,12 +625,12 @@
         });
     </script>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             // --- Hamburger Mobile Navigation Logic ---
             const menuToggleBtn = document.getElementById('menu-toggle-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const menuLinks = document.querySelectorAll('.mobile-nav-link');
-            
+
             const line1 = document.getElementById('hamburger-line-1');
             const line2 = document.getElementById('hamburger-line-2');
             const line3 = document.getElementById('hamburger-line-3');
@@ -556,14 +669,14 @@
             const prevBtn = document.getElementById('slider-prev-btn');
             const nextBtn = document.getElementById('slider-next-btn');
             const indicatorDots = document.querySelectorAll('.indicator-dot');
-            
+
             let currentSlide = 0;
             const totalSlides = 3;
 
             function updateSliderPosition() {
                 // Translate layout cleanly on the horizontal axis
                 sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-                
+
                 // Redraw active and resting state styles of the pagination pills
                 indicatorDots.forEach((dot, index) => {
                     if (index === currentSlide) {
@@ -600,15 +713,15 @@
             let touchEndX = 0;
 
             const sliderContainer = document.getElementById('project-slider-container');
-            
+
             sliderContainer.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
-            }, {passive: true});
+            }, { passive: true });
 
             sliderContainer.addEventListener('touchend', (e) => {
                 touchEndX = e.changedTouches[0].screenX;
                 handleSwipe();
-            }, {passive: true});
+            }, { passive: true });
 
             function handleSwipe() {
                 const threshold = 50; // Minimum swipe distance in pixels
@@ -628,4 +741,5 @@
         };
     </script>
 </body>
+
 </html>
