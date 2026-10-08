@@ -93,10 +93,10 @@
 
             <!-- Action Buttons & Hamburger (Mobile) -->
             <div class="flex items-center gap-3">
-                <a href="#contact"
-                    class="hidden sm:inline-block font-heading font-black text-base bg-primary px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                <button type="button"
+                    class="open-hire-modal hidden sm:inline-block font-heading font-black text-base bg-primary px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer">
                     Hire Me
-                </a>
+                </button>
 
                 <!-- Responsive Hamburger Menu Trigger -->
                 <button id="menu-toggle-btn" aria-label="Toggle Menu"
@@ -126,10 +126,10 @@
                 class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Project</a>
         </div>
         <div class="w-full">
-            <a href="#contact"
-                class="mobile-nav-link w-full text-center font-heading font-black text-xl bg-primary block py-4 rounded-xl brutalist-border-md brutalist-shadow">
+            <button type="button"
+                class="open-hire-modal mobile-nav-link w-full text-center font-heading font-black text-xl bg-primary block py-4 rounded-xl brutalist-border-md brutalist-shadow cursor-pointer">
                 Hire Me Now
-            </a>
+            </button>
         </div>
     </div>
 
@@ -569,7 +569,7 @@
 
     <!-- Project Invitation Section / CTA Box -->
     <section id="contact" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-brandBg brutalist-border-md brutalist-shadow-lg p-12 text-center rounded-xl relative overflow-hidden flex flex-col items-center justify-center space-y-6"
+        <div class="bg-brandBg brutalist-border-md brutalist-shadow-lg p-10 sm:p-14 text-center rounded-xl relative overflow-hidden flex flex-col items-center justify-center space-y-6"
             data-aos="zoom-in">
             <h2 class="font-heading font-black text-2xl sm:text-3xl md:text-5xl text-darkText max-w-2xl leading-tight">
                 Have a project or want to work with me?
@@ -577,12 +577,116 @@
             <p class="text-sm sm:text-lg font-heading font-extrabold text-darkText/70 max-w-md">
                 Please contact me by clicking the button below
             </p>
-            <a href="mailto:qaidyidn@gmail.com"
-                class="font-heading font-black text-lg bg-primary text-darkText px-8 py-4 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-block">
+            <button type="button"
+                class="open-hire-modal font-heading font-black text-lg bg-primary text-darkText px-8 py-4 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-flex items-center gap-2 cursor-pointer">
                 Hire Me <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            </button>
         </div>
     </section>
+
+    <!-- Hire Me Contact Modal -->
+    <div id="hire-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div id="hire-modal-box"
+            class="relative w-full max-w-lg bg-surface brutalist-border-md shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl p-6 sm:p-8 transform scale-95 transition-all duration-300">
+            <!-- Close Button -->
+            <button id="close-hire-modal" aria-label="Close Modal"
+                class="absolute top-4 right-4 w-10 h-10 bg-primary hover:bg-secondary hover:text-white text-darkText brutalist-border-sm brutalist-shadow-sm rounded-lg flex items-center justify-center transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none cursor-pointer">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <!-- Header -->
+            <div class="mb-6 text-left pr-10">
+                <span
+                    class="inline-block bg-primary text-black font-heading font-black text-xs uppercase px-3 py-1 rounded-md brutalist-border-sm brutalist-shadow-sm mb-3">
+                    Let's Connect & Collaborate
+                </span>
+                <h3 class="font-heading font-black text-2xl sm:text-3xl text-darkText">
+                    Get In Touch
+                </h3>
+                <p class="font-heading font-semibold text-sm sm:text-base text-darkText/70 mt-1">
+                    Choose your preferred way to contact me:
+                </p>
+            </div>
+
+            <!-- Contact Options Cards -->
+            <div class="flex flex-col gap-4">
+                <!-- WhatsApp Option Card -->
+                <a href="https://wa.me/6285880675129?text=Hello%20Qaidy%2C%20I'm%20interested%20in%20working%20with%20you!"
+                    target="_blank" rel="noopener noreferrer"
+                    class="group relative flex items-center justify-between p-4 sm:p-5 bg-[#E8F9EE] hover:bg-[#D4F5DE] brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-xl cursor-pointer">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-[#25D366] text-white flex items-center justify-center brutalist-border-sm text-2xl flex-shrink-0 transition-transform group-hover:scale-110">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h4 class="font-heading font-black text-lg text-darkText">WhatsApp</h4>
+                                <span
+                                    class="bg-[#25D366] text-white font-heading font-black text-[10px] uppercase px-2 py-0.5 rounded-full">Fast
+                                    Response</span>
+                            </div>
+                            <p class="text-sm font-bold text-darkText font-mono mt-0.5">+62 858-8067-5129</p>
+                            <p class="text-xs text-darkText/70 mt-0.5 font-medium">Chat directly via WhatsApp</p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden sm:flex w-9 h-9 rounded-lg bg-white brutalist-border-sm items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
+                        <i
+                            class="fa-solid fa-arrow-right text-darkText text-sm group-hover:translate-x-0.5 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- Email Option Card -->
+                <a href="mailto:qaidyidn@gmail.com?subject=Project%20Inquiry%20-%20Collaboration"
+                    class="group relative flex items-center justify-between p-4 sm:p-5 bg-[#FFF0F8] hover:bg-[#FFE0F0] brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-xl cursor-pointer">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-secondary text-white flex items-center justify-center brutalist-border-sm text-2xl flex-shrink-0 transition-transform group-hover:scale-110">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h4 class="font-heading font-black text-lg text-darkText">Email</h4>
+                                <span
+                                    class="bg-secondary text-white font-heading font-black text-[10px] uppercase px-2 py-0.5 rounded-full">Official
+                                    Email</span>
+                            </div>
+                            <p class="text-sm font-bold text-darkText font-mono mt-0.5">qaidyidn@gmail.com</p>
+                            <p class="text-xs text-darkText/70 mt-0.5 font-medium">Send project proposals or inquiries</p>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden sm:flex w-9 h-9 rounded-lg bg-white brutalist-border-sm items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
+                        <i
+                            class="fa-solid fa-arrow-right text-darkText text-sm group-hover:translate-x-0.5 transition-transform"></i>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Quick Copy Buttons Section -->
+            <div class="mt-6 pt-5 border-t-2 border-black/10 flex flex-wrap items-center justify-between gap-3">
+                <span class="text-xs font-heading font-extrabold text-darkText/60 uppercase tracking-wider">Copy Contact:</span>
+                <div class="flex items-center gap-2 flex-wrap">
+                    <button type="button" id="copy-phone-btn"
+                        class="text-xs font-heading font-black bg-white hover:bg-primary px-3 py-1.5 rounded-md brutalist-border-sm brutalist-shadow-sm transition-all flex items-center gap-1.5 active:scale-95 cursor-pointer">
+                        <i class="fa-solid fa-copy text-xs"></i> <span>085880675129</span>
+                    </button>
+                    <button type="button" id="copy-email-btn"
+                        class="text-xs font-heading font-black bg-white hover:bg-primary px-3 py-1.5 rounded-md brutalist-border-sm brutalist-shadow-sm transition-all flex items-center gap-1.5 active:scale-95 cursor-pointer">
+                        <i class="fa-solid fa-copy text-xs"></i> <span>qaidyidn@gmail.com</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Copy Toast Feedback -->
+            <div id="copy-toast"
+                class="hidden absolute -bottom-4 left-1/2 -translate-x-1/2 bg-black text-primary border-2 border-primary text-xs font-heading font-black px-4 py-2 rounded-lg shadow-lg z-20 transition-all">
+                Copied to clipboard!
+            </div>
+        </div>
+    </div>
 
     <!-- Dark Footer -->
     <footer class="bg-black text-white py-12 border-t-[3px] border-darkText">
@@ -738,6 +842,111 @@
 
             // Initial alignment check
             updateSliderPosition();
+
+            // --- Hire Me Modal Logic ---
+            const hireModal = document.getElementById('hire-modal');
+            const hireModalBox = document.getElementById('hire-modal-box');
+            const closeHireModalBtn = document.getElementById('close-hire-modal');
+            const openHireModalBtns = document.querySelectorAll('.open-hire-modal');
+            const copyPhoneBtn = document.getElementById('copy-phone-btn');
+            const copyEmailBtn = document.getElementById('copy-email-btn');
+            const copyToast = document.getElementById('copy-toast');
+            let toastTimeout = null;
+
+            function openModal() {
+                if (!hireModal) return;
+                hireModal.classList.remove('opacity-0', 'pointer-events-none');
+                hireModalBox.classList.remove('scale-95');
+                hireModalBox.classList.add('scale-100');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeModal() {
+                if (!hireModal) return;
+                hireModal.classList.add('opacity-0', 'pointer-events-none');
+                hireModalBox.classList.remove('scale-100');
+                hireModalBox.classList.add('scale-95');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            openHireModalBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (isMenuOpen && typeof toggleMenu === 'function') {
+                        toggleMenu();
+                    }
+                    openModal();
+                });
+            });
+
+            if (closeHireModalBtn) {
+                closeHireModalBtn.addEventListener('click', closeModal);
+            }
+
+            if (hireModal) {
+                hireModal.addEventListener('click', (e) => {
+                    if (e.target === hireModal) {
+                        closeModal();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && hireModal && !hireModal.classList.contains('pointer-events-none')) {
+                    closeModal();
+                }
+            });
+
+            function showCopyFeedback(message) {
+                if (!copyToast) return;
+                copyToast.textContent = message;
+                copyToast.classList.remove('hidden');
+                if (toastTimeout) clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    copyToast.classList.add('hidden');
+                }, 2200);
+            }
+
+            function copyToClipboard(text, message) {
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showCopyFeedback(message);
+                    }).catch(() => {
+                        fallbackCopy(text, message);
+                    });
+                } else {
+                    fallbackCopy(text, message);
+                }
+            }
+
+            function fallbackCopy(text, message) {
+                const tempInput = document.createElement('textarea');
+                tempInput.value = text;
+                tempInput.style.position = 'fixed';
+                tempInput.style.opacity = '0';
+                document.body.appendChild(tempInput);
+                tempInput.focus();
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    showCopyFeedback(message);
+                } catch (err) {
+                    console.error('Failed to copy', err);
+                }
+                document.body.removeChild(tempInput);
+            }
+
+            if (copyPhoneBtn) {
+                copyPhoneBtn.addEventListener('click', () => {
+                    copyToClipboard('085880675129', 'WhatsApp number copied to clipboard!');
+                });
+            }
+
+            if (copyEmailBtn) {
+                copyEmailBtn.addEventListener('click', () => {
+                    copyToClipboard('qaidyidn@gmail.com', 'Email copied to clipboard!');
+                });
+            }
         };
     </script>
 </body>
