@@ -519,6 +519,45 @@
                         </div>
                     </div>
 
+                    <!-- Slide 4: Singer Explorer Mobile App -->
+                    <div class="w-full flex-shrink-0 px-2">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brandBg p-4">
+                            <!-- Left Details Box -->
+                            <div class="flex flex-col items-start space-y-6">
+                                <span
+                                    class="bg-[#FFE082] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT
+                                    #4 — SINGER EXPLORER</span>
+                                <h3 class="font-heading font-black text-3xl sm:text-4xl">Singer Explorer</h3>
+                                <p class="text-darkText/80 text-base leading-relaxed max-w-lg font-medium">
+                                    Singer Explorer is a mobile application built with Flutter & Dart designed to
+                                    discover and explore music artists, comprehensive singer profiles, biographies,
+                                    and their top hit tracks. Features an intuitive mobile UI, smooth navigation,
+                                    and artist cataloging.
+                                </p>
+                                <button
+                                    class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
+                                    <a href="https://github.com/Qaidy/Singer-Explorer.git" target="_blank"
+                                        rel="noopener noreferrer" class="text-darkText">More Detail <i
+                                            class="fa-solid fa-arrow-right"></i></a>
+                                </button>
+                            </div>
+                            <!-- Right Picture Container Mockup -->
+                            <div
+                                class="relative w-full rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-[#F5F5F0] p-4 sm:p-6 flex items-center justify-center gap-4 sm:gap-6">
+                                <div
+                                    class="w-1/2 max-w-[200px] rounded-xl overflow-hidden brutalist-border-sm brutalist-shadow bg-white transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                                    <img src="assets/1.png" alt="Singer Explorer List Screen"
+                                        class="w-full h-auto block" />
+                                </div>
+                                <div
+                                    class="w-1/2 max-w-[200px] rounded-xl overflow-hidden brutalist-border-sm brutalist-shadow bg-white transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                                    <img src="assets/2.png" alt="Singer Explorer Detail Screen"
+                                        class="w-full h-auto block" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -537,6 +576,8 @@
                         data-index="1"></button>
                     <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all"
                         data-index="2"></button>
+                    <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all"
+                        data-index="3"></button>
                 </div>
 
                 <button id="slider-next-btn" aria-label="Next Slide"
@@ -584,7 +625,7 @@
         </div>
     </section>
 
-    <!-- Hire Me Contact Modal -->
+    <!-- Hire Me Contact Moda l -->
     <div id="hire-modal"
         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
         <div id="hire-modal-box"
@@ -775,7 +816,7 @@
             const indicatorDots = document.querySelectorAll('.indicator-dot');
 
             let currentSlide = 0;
-            const totalSlides = 3;
+            const totalSlides = sliderTrack ? sliderTrack.children.length : 4;
 
             function updateSliderPosition() {
                 // Translate layout cleanly on the horizontal axis
