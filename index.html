@@ -1,525 +1,315 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qaidy Rasyid Hidayat — Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&display=block"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <script>
-        tailwind.config = { theme: { extend: { colors: { neo: { bg: '#FFFDF5', accent: '#FF6B6B', sec: '#FFD93D', muted: '#C4B5FD' } }, fontFamily: { sans: ['"Space Grotesk"', 'sans-serif'] } } } }
-    </script>
-    <style>
-        /* Neo-brutalism tokens: 4px black borders, zero-blur offset shadows, snap motion */
-        .b {
-            border: 4px solid #000
-        }
-
-        .bb {
-            border-bottom: 4px solid #000
-        }
-
-        .bt {
-            border-top: 4px solid #000
-        }
-
-        .sh-s {
-            box-shadow: 4px 4px 0 0 #000
-        }
-
-        .sh-m {
-            box-shadow: 6px 6px 0 0 #000
-        }
-
-        .sh-l {
-            box-shadow: 8px 8px 0 0 #000
-        }
-
-        @media(min-width:768px) {
-            .sh-m {
-                box-shadow: 8px 8px 0 0 #000
-            }
-
-            .sh-l {
-                box-shadow: 12px 12px 0 0 #000
-            }
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: .5rem;
-            min-height: 3.5rem;
-            padding: 0 1.5rem;
-            border: 4px solid #000;
-            box-shadow: 6px 6px 0 0 #000;
-            font-weight: 700;
-            font-size: .875rem;
-            text-transform: uppercase;
-            letter-spacing: .05em;
-            transition: all .1s linear;
-            cursor: pointer
-        }
-
-        .btn:hover {
-            box-shadow: 8px 8px 0 0 #000;
-            filter: brightness(.95)
-        }
-
-        .btn:active {
-            transform: translate(4px, 4px);
-            box-shadow: none
-        }
-
-        .card {
-            position: relative;
-            transition: transform .2s ease-out, box-shadow .2s ease-out
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 14px 14px 0 0 #000
-        }
-
-        .badge {
-            display: inline-block;
-            border: 4px solid #000;
-            box-shadow: 4px 4px 0 0 #000;
-            font-weight: 900;
-            font-size: .8rem;
-            text-transform: uppercase;
-            letter-spacing: .15em;
-            padding: .25rem .75rem;
-            transition: transform .2s ease-out
-        }
-
-        .badge:hover {
-            transform: rotate(12deg)
-        }
-
-        .stroke {
-            color: transparent;
-            -webkit-text-stroke: 2px #000
-        }
-
-        .halftone {
-            background-image: radial-gradient(#000 1.5px, transparent 1.5px);
-            background-size: 20px 20px
-        }
-
-        .grid-bg {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, .1) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, .1) 1px, transparent 1px)
-        }
-
-        .tri {
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%)
-        }
-
-        .spin-slow {
-            animation: spin 10s linear infinite
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg)
-            }
-        }
-
-        .marq {
-            display: flex;
-            width: max-content;
-            animation: marq 25s linear infinite
-        }
-
-        @keyframes marq {
-            to {
-                transform: translateX(-50%)
-            }
-        }
-
-        .dot {
-            width: 20px;
-            height: 20px;
-            border: 4px solid #000;
-            background: #fff;
-            transition: all .1s linear
-        }
-
-        .dot.on {
-            width: 48px;
-            background: #FF6B6B
-        }
-
-        a:focus-visible,
-        button:focus-visible {
-            outline: none;
-            box-shadow: 0 0 0 2px #FFFDF5, 0 0 0 5px #000
-        }
-
-        @media(prefers-reduced-motion:reduce) {
-
-            .spin-slow,
-            .marq,
-            .animate-bounce,
-            .animate-pulse {
-                animation: none !important
-            }
-
-            * {
-                transition: none !important
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qaidy Rasyid Hidayat — Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script>
+tailwind.config={theme:{extend:{colors:{neo:{bg:'#FFFDF5',accent:'#FF6B6B',sec:'#FFD93D',muted:'#C4B5FD'}},fontFamily:{sans:['"Space Grotesk"','sans-serif']}}}}
+</script>
+<style>
+/* Neo-brutalism tokens: 4px black borders, zero-blur offset shadows, snap motion */
+.b{border:4px solid #000}.bb{border-bottom:4px solid #000}.bt{border-top:4px solid #000}
+.sh-s{box-shadow:4px 4px 0 0 #000}.sh-m{box-shadow:6px 6px 0 0 #000}.sh-l{box-shadow:8px 8px 0 0 #000}
+@media(min-width:768px){.sh-m{box-shadow:8px 8px 0 0 #000}.sh-l{box-shadow:12px 12px 0 0 #000}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3.5rem;padding:0 1.5rem;border:4px solid #000;box-shadow:6px 6px 0 0 #000;font-weight:700;font-size:.875rem;text-transform:uppercase;letter-spacing:.05em;transition:all .1s linear;cursor:pointer}
+.btn:hover{box-shadow:8px 8px 0 0 #000;filter:brightness(.95)}.btn:active{transform:translate(4px,4px);box-shadow:none}
+.card{position:relative;transition:transform .2s ease-out,box-shadow .2s ease-out}
+.card:hover{transform:translateY(-6px);box-shadow:14px 14px 0 0 #000}
+.badge{display:inline-block;border:4px solid #000;box-shadow:4px 4px 0 0 #000;font-weight:900;font-size:.8rem;text-transform:uppercase;letter-spacing:.15em;padding:.25rem .75rem;transition:transform .2s ease-out}
+.badge:hover{transform:rotate(12deg)}
+.stroke{color:transparent;-webkit-text-stroke:2px #000;text-shadow:6px 6px 0 #FFD93D}
+.halftone{background-image:radial-gradient(#000 1.5px,transparent 1.5px);background-size:20px 20px}
+.grid-bg{background-size:40px 40px;background-image:linear-gradient(to right,rgba(0,0,0,.1) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,.1) 1px,transparent 1px)}
+.tri{clip-path:polygon(50% 0%,0% 100%,100% 100%)}
+.spin-slow{animation:spin 10s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.marq{display:flex;width:max-content;animation:marq 25s linear infinite}@keyframes marq{to{transform:translateX(-50%)}}
+.dot{width:20px;height:20px;border:4px solid #000;background:#fff;transition:all .1s linear}.dot.on{width:48px;background:#FF6B6B}
+a:focus-visible,button:focus-visible{outline:none;box-shadow:0 0 0 2px #FFFDF5,0 0 0 5px #000}
+@media(prefers-reduced-motion:reduce){.spin-slow,.marq,.animate-bounce,.animate-pulse{animation:none!important}*{transition:none!important}}
+</style>
 </head>
-
 <body class="bg-neo-bg text-black font-sans font-bold overflow-x-hidden selection:bg-neo-sec">
 
-    <!-- NAV -->
-    <header class="sticky top-0 z-50 bg-neo-bg bb">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
-            <a href="#home"
-                class="b bg-neo-accent px-3 py-1 font-black text-2xl uppercase tracking-tighter sh-s -rotate-2 hover:rotate-0 transition-transform duration-100">Qaidy</a>
-            <nav class="hidden md:flex items-center gap-4 font-black uppercase text-sm tracking-wide">
-                <a href="#home"
-                    class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Home</a>
-                <a href="#services"
-                    class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">What
-                    I Do</a>
-                <a href="#skills"
-                    class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Skills</a>
-                <a href="#experience"
-                    class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Experience</a>
-                <a href="#project"
-                    class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Project</a>
-            </nav>
-            <div class="flex items-center gap-3">
-                <button type="button" class="open-hire btn bg-neo-sec hidden sm:inline-flex">Hire Me</button>
-                <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false"
-                    class="md:hidden w-14 h-14 b bg-white sh-s flex items-center justify-center active:translate-x-1 active:translate-y-1 active:shadow-none"><i
-                        class="fa-solid fa-bars text-xl"></i></button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-neo-muted bt halftone">
-            <div class="flex flex-col gap-4 p-4">
-                <a href="#home" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Home</a>
-                <a href="#services" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">What I Do</a>
-                <a href="#skills" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Skills</a>
-                <a href="#experience"
-                    class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Experience</a>
-                <a href="#project" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Project</a>
-                <button type="button" class="open-hire btn bg-neo-accent w-full text-lg">Hire Me Now</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- HERO: 60/40 split, sticker collage on the right -->
-    <section id="home" class="relative overflow-hidden bb grid-bg">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-24 grid lg:grid-cols-5 gap-12 items-center">
-            <div class="lg:col-span-3 flex flex-col items-start gap-6">
-                <span class="badge bg-neo-sec -rotate-2">Flutter Developer | Full Stack Developer</span>
-                <h1 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl xl:text-8xl">
-                    <span class="block">I'm</span>
-                    <span class="stroke block">Qaidy</span>
-                    <span class="inline-block b bg-neo-accent px-3 py-1 -rotate-2 sh-m mt-2 mr-2">Rasyid</span>
-                    <span class="inline-block b bg-neo-muted px-3 py-1 rotate-1 sh-m mt-2">Hidayat</span>
-                </h1>
-                <p class="text-lg sm:text-xl leading-snug max-w-xl b bg-white p-4 sh-m">
-                    Mobile &amp; Web Developer experienced in Flutter, PHP, Laravel, Supabase, and front-end
-                    technologies like HTML, CSS, JavaScript, Tailwind &amp; Bootstrap. A quick learner, team player, and
-                    ready for new challenges.
-                </p>
-                <div class="flex flex-wrap gap-4 w-full sm:w-auto">
-                    <a href="https://drive.google.com/file/d/1vuhecKcPA86ozy_SgEuX9vcvOt0qRTN7/view?usp=sharing"
-                        target="_blank" rel="noopener noreferrer" class="btn bg-neo-accent w-full sm:w-auto"><i
-                            class="fa-solid fa-file-arrow-down"></i> Download CV</a>
-                    <button type="button" class="open-hire btn bg-white w-full sm:w-auto">Hire Me <i
-                            class="fa-solid fa-arrow-right"></i></button>
-                </div>
-            </div>
-            <div class="lg:col-span-2 relative flex justify-center py-8">
-                <div class="absolute top-0 left-4 w-20 h-20 rounded-full b bg-neo-sec" aria-hidden="true"></div>
-                <div class="absolute bottom-0 right-2 w-24 h-24 b bg-neo-muted rotate-12" aria-hidden="true"></div>
-                <i class="fa-solid fa-star spin-slow absolute -top-2 right-6 text-6xl text-neo-sec drop-shadow-[4px_4px_0_#000]"
-                    aria-hidden="true"></i>
-                <div class="relative w-64 h-80 sm:w-72 sm:h-96 b bg-white sh-l rotate-3 overflow-hidden"
-                    style="border-width:8px">
-                    <img src="assets/profile.png" alt="Portrait of Qaidy Rasyid Hidayat"
-                        class="w-full h-full object-cover"
-                        onerror="this.src='https://placehold.co/400x500/FFD93D/000000?text=Profile'">
-                </div>
-                <span class="badge bg-neo-accent absolute bottom-4 left-0 -rotate-6 animate-bounce">Open to work</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- MARQUEE -->
-    <div class="bg-black text-neo-sec bb overflow-hidden py-3" aria-hidden="true">
-        <div class="marq font-black uppercase text-2xl tracking-widest" id="marq"></div>
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-neo-bg bb">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+    <a href="#home" class="b bg-neo-accent px-3 py-1 font-black text-2xl uppercase tracking-tighter sh-s -rotate-2 hover:rotate-0 transition-transform duration-100">Qaidy</a>
+    <nav class="hidden md:flex items-center gap-4 font-black uppercase text-sm tracking-wide">
+      <a href="#home" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Home</a>
+      <a href="#services" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">What I Do</a>
+      <a href="#skills" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Skills</a>
+      <a href="#experience" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Experience</a>
+      <a href="#project" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Project</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button type="button" class="open-hire btn bg-neo-sec hidden sm:inline-flex">Hire Me</button>
+      <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden w-14 h-14 b bg-white sh-s flex items-center justify-center active:translate-x-1 active:translate-y-1 active:shadow-none"><i class="fa-solid fa-bars text-xl"></i></button>
     </div>
-
-    <!-- WHAT I DO -->
-    <section id="services" class="bb py-16 md:py-24 px-4 sm:px-6 md:px-8 halftone-soft">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl mb-14"><span
-                    class="stroke">What do</span> <span class="inline-block b bg-neo-sec px-3 rotate-1 sh-m">I
-                    do?</span></h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="card b bg-white sh-l -rotate-1">
-                    <div class="bb bg-neo-muted px-6 py-4 flex items-center justify-between"><span
-                            class="badge bg-white">Mobile</span><i class="fa-solid fa-star text-xl"></i></div>
-                    <div class="p-6 space-y-4">
-                        <div class="w-16 h-16 b bg-neo-accent sh-s flex items-center justify-center"><i
-                                class="fa-solid fa-mobile-screen text-3xl"></i></div>
-                        <h3 class="font-black uppercase text-3xl tracking-tight leading-none">Flutter Developer</h3>
-                        <p class="text-lg leading-snug">I build beautiful cross-platform mobile apps for Android using
-                            Flutter and Dart.</p>
-                    </div>
-                </div>
-                <div class="card b bg-white sh-l rotate-1 md:mt-8">
-                    <div class="bb bg-neo-sec px-6 py-4 flex items-center justify-between"><span
-                            class="badge bg-white">Front</span><i class="fa-solid fa-star text-xl"></i></div>
-                    <div class="p-6 space-y-4">
-                        <div class="w-16 h-16 b bg-neo-muted sh-s flex items-center justify-center"><i
-                                class="fa-solid fa-desktop text-3xl"></i></div>
-                        <h3 class="font-black uppercase text-3xl tracking-tight leading-none">Front End Developer</h3>
-                        <p class="text-lg leading-snug">I build responsive and user-friendly websites using HTML, CSS,
-                            JavaScript, Tailwind CSS, and Bootstrap.</p>
-                    </div>
-                </div>
-                <div class="card b bg-white sh-l -rotate-2">
-                    <div class="bb bg-neo-accent px-6 py-4 flex items-center justify-between"><span
-                            class="badge bg-white">Back</span><i class="fa-solid fa-star text-xl"></i></div>
-                    <div class="p-6 space-y-4">
-                        <div class="w-16 h-16 b bg-neo-sec sh-s flex items-center justify-center"><i
-                                class="fa-solid fa-server text-3xl"></i></div>
-                        <h3 class="font-black uppercase text-3xl tracking-tight leading-none">Back End Developer</h3>
-                        <p class="text-lg leading-snug">I build server-side logic and APIs using PHP &amp; Laravel, with
-                            database integration via MySQL and Supabase.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS (yellow + halftone) -->
-    <section id="skills" class="relative bb bg-neo-sec py-16 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden">
-        <div class="absolute inset-0 halftone" style="opacity:.12" aria-hidden="true"></div>
-        <div class="relative max-w-7xl mx-auto">
-            <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl mb-14"><span
-                    class="inline-block b bg-white px-3 -rotate-2 sh-m">Skills</span></h2>
-            <ul id="skill-list" class="flex flex-wrap gap-5 sm:gap-6"></ul>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE (violet + grid) -->
-    <section id="experience" class="bb bg-neo-muted grid-bg py-16 md:py-24 px-4 sm:px-6 md:px-8">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl mb-14"><span
-                    class="inline-block b bg-neo-accent px-3 rotate-1 sh-m">Experience</span></h2>
-            <div id="exp-list" class="space-y-10"></div>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="project" class="bb py-16 md:py-24 px-4 sm:px-6 md:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl mb-14"><span
-                    class="stroke">Selected</span> <span
-                    class="inline-block b bg-neo-sec px-3 -rotate-1 sh-m">Project</span></h2>
-            <div id="slider" class="overflow-hidden pb-6 pt-2">
-                <div id="track" class="flex transition-transform duration-300 ease-out"></div>
-            </div>
-            <div class="flex justify-center items-center gap-4 sm:gap-6 mt-6">
-                <button id="prev" aria-label="Previous project" class="btn bg-white w-14 !px-0"><i
-                        class="fa-solid fa-arrow-left text-lg"></i></button>
-                <div id="dots" class="flex gap-2"></div>
-                <button id="next" aria-label="Next project" class="btn bg-white w-14 !px-0"><i
-                        class="fa-solid fa-arrow-right text-lg"></i></button>
-            </div>
-            <div class="mt-14 flex flex-col items-center gap-5 text-center">
-                <p class="font-black uppercase tracking-[0.2em] text-sm"><i class="fa-solid fa-star"></i> These are just
-                    a few highlights <i class="fa-solid fa-star"></i></p>
-                <a href="https://github.com/Qaidy?tab=repositories" target="_blank" rel="noopener noreferrer"
-                    class="btn bg-neo-sec"><i class="fa-brands fa-github text-xl"></i> Explore all my projects on
-                    GitHub</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA (red) -->
-    <section id="contact" class="relative overflow-hidden bb bg-neo-accent py-16 md:py-24 px-4 sm:px-6 md:px-8">
-        <div class="absolute inset-0 halftone" style="opacity:.12" aria-hidden="true"></div>
-        <i class="fa-solid fa-star spin-slow absolute top-6 left-6 text-5xl text-neo-sec" aria-hidden="true"></i>
-        <div class="absolute bottom-6 right-6 w-16 h-16 rounded-full b bg-neo-muted" aria-hidden="true"></div>
-        <div class="relative max-w-3xl mx-auto b bg-white sh-l p-8 sm:p-12 text-center space-y-6 rotate-1">
-            <h2 class="font-black uppercase tracking-tighter leading-[0.9] text-4xl sm:text-6xl">Have a project or want
-                to work with me?</h2>
-            <p class="text-xl">Please contact me by clicking the button below.</p>
-            <button type="button" class="open-hire btn bg-neo-sec text-lg w-full sm:w-auto">Hire Me <i
-                    class="fa-solid fa-arrow-right"></i></button>
-        </div>
-    </section>
-
-    <!-- MODAL -->
-    <div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
-        class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-100">
-        <div id="modal-box"
-            class="relative w-full max-w-lg bg-neo-bg b shadow-[12px_12px_0_0_#000] p-6 sm:p-8 scale-95 transition-transform duration-100 max-h-[95vh] overflow-y-auto">
-            <button id="modal-close" aria-label="Close"
-                class="absolute top-4 right-4 w-12 h-12 bg-neo-accent b sh-s flex items-center justify-center active:translate-x-1 active:translate-y-1 active:shadow-none"><i
-                    class="fa-solid fa-xmark text-xl"></i></button>
-            <div class="mb-6 pr-14">
-                <span class="badge bg-neo-sec -rotate-2 mb-3">Let's connect &amp; collaborate</span>
-                <h3 id="modal-title" class="font-black uppercase tracking-tighter text-4xl leading-none">Get in touch
-                </h3>
-                <p class="mt-2">Choose your preferred way to contact me:</p>
-            </div>
-            <div class="flex flex-col gap-5">
-                <a href="https://wa.me/6285880675129?text=Hello%20Qaidy%2C%20I'm%20interested%20in%20working%20with%20you!"
-                    target="_blank" rel="noopener noreferrer" class="card flex items-center gap-4 p-4 b bg-white sh-m">
-                    <span class="w-14 h-14 b bg-neo-sec flex items-center justify-center text-3xl shrink-0"><i
-                            class="fa-brands fa-whatsapp"></i></span>
-                    <span><b class="block font-black uppercase text-xl">WhatsApp</b><span class="block">+62
-                            858-8067-5129</span><span class="block text-sm font-medium">Chat directly via
-                            WhatsApp</span></span>
-                </a>
-                <a href="mailto:qaidyidn@gmail.com?subject=Project%20Inquiry%20-%20Collaboration"
-                    class="card flex items-center gap-4 p-4 b bg-white sh-m">
-                    <span class="w-14 h-14 b bg-neo-accent flex items-center justify-center text-3xl shrink-0"><i
-                            class="fa-solid fa-envelope"></i></span>
-                    <span class="min-w-0"><b class="block font-black uppercase text-xl">Email</b><span
-                            class="block break-all">qaidyidn@gmail.com</span><span
-                            class="block text-sm font-medium">Send project proposals or inquiries</span></span>
-                </a>
-            </div>
-            <div class="mt-6 pt-5 bt flex flex-wrap items-center justify-between gap-3">
-                <span class="text-xs font-black uppercase tracking-widest">Copy contact:</span>
-                <div class="flex gap-2 flex-wrap">
-                    <button type="button" data-copy="085880675129" data-msg="WhatsApp number copied!"
-                        class="copy text-xs font-black bg-white hover:bg-neo-sec px-3 py-2 b sh-s flex items-center gap-1.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all duration-100"><i
-                            class="fa-solid fa-copy"></i> 085880675129</button>
-                    <button type="button" data-copy="qaidyidn@gmail.com" data-msg="Email copied!"
-                        class="copy text-xs font-black bg-white hover:bg-neo-sec px-3 py-2 b sh-s flex items-center gap-1.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all duration-100"><i
-                            class="fa-solid fa-copy"></i> qaidyidn@gmail.com</button>
-                </div>
-            </div>
-            <div id="toast" role="status"
-                class="hidden absolute -bottom-6 left-1/2 -translate-x-1/2 bg-black text-neo-sec text-xs font-black uppercase px-4 py-2 whitespace-nowrap">
-            </div>
-        </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-neo-muted bt halftone">
+    <div class="flex flex-col gap-4 p-4">
+      <a href="#home" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Home</a>
+      <a href="#services" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">What I Do</a>
+      <a href="#skills" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Skills</a>
+      <a href="#experience" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Experience</a>
+      <a href="#project" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Project</a>
+      <button type="button" class="open-hire btn bg-neo-accent w-full text-lg">Hire Me Now</button>
     </div>
+  </div>
+</header>
 
-    <!-- FOOTER -->
-    <footer class="bg-neo-sec bt py-12 relative overflow-hidden">
-        <div class="absolute inset-0 halftone" style="opacity:.1" aria-hidden="true"></div>
-        <div
-            class="relative max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <p class="font-black uppercase tracking-wider text-sm b bg-white px-3 py-2 sh-s">&copy; 2026 Qaidy Rasyid
-                Hidayat. All rights reserved.</p>
-            <div class="flex items-center gap-4">
-                <a href="https://github.com/Qaidy" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-                    class="w-14 h-14 b bg-white sh-s flex items-center justify-center hover:bg-neo-accent hover:-translate-y-1 transition-all duration-100"><i
-                        class="fa-brands fa-github text-2xl"></i></a>
-                <a href="https://www.linkedin.com/in/qaidy-rasyid-810633376/" target="_blank" rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    class="w-14 h-14 b bg-white sh-s flex items-center justify-center hover:bg-neo-muted hover:-translate-y-1 transition-all duration-100"><i
-                        class="fa-brands fa-linkedin-in text-2xl"></i></a>
-                <a href="https://www.instagram.com/qaidyrsyd/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    class="w-14 h-14 b rounded-full bg-white sh-s flex items-center justify-center hover:bg-neo-accent hover:-translate-y-1 transition-all duration-100"><i
-                        class="fa-brands fa-instagram text-2xl"></i></a>
-            </div>
+<!-- HERO: 60/40 split, sticker collage on the right -->
+<section id="home" class="relative overflow-hidden bb grid-bg">
+  <span class="stroke absolute -bottom-6 -left-4 font-black leading-none text-[12rem] sm:text-[22rem] select-none pointer-events-none" style="opacity:.12;text-shadow:none" aria-hidden="true">DEV</span>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-24 grid lg:grid-cols-5 gap-12 items-center">
+    <div class="lg:col-span-3 flex flex-col items-start gap-6">
+      <span class="badge bg-neo-sec -rotate-2">Flutter Developer | Full Stack Developer</span>
+      <h1 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl xl:text-8xl">
+        <span class="block">I'm</span>
+        <span class="stroke block">Qaidy</span>
+        <span class="inline-block b bg-neo-accent px-3 py-1 -rotate-2 sh-m mt-2 mr-2">Rasyid</span>
+        <span class="inline-block b bg-neo-muted px-3 py-1 rotate-1 sh-m mt-2">Hidayat</span>
+      </h1>
+      <p class="text-lg sm:text-xl leading-snug max-w-xl b bg-white p-4 sh-m">
+        Mobile &amp; Web Developer experienced in Flutter, PHP, Laravel, Supabase, and front-end technologies like HTML, CSS, JavaScript, Tailwind &amp; Bootstrap. A quick learner, team player, and ready for new challenges.
+      </p>
+      <div class="flex flex-wrap gap-4 w-full sm:w-auto">
+        <a href="https://drive.google.com/file/d/1vuhecKcPA86ozy_SgEuX9vcvOt0qRTN7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn bg-neo-accent w-full sm:w-auto"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+        <button type="button" class="open-hire btn bg-white w-full sm:w-auto">Hire Me <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="lg:col-span-2 relative flex justify-center py-8">
+      <div class="absolute top-0 left-4 w-20 h-20 rounded-full b bg-neo-sec" aria-hidden="true"></div>
+      <div class="absolute bottom-0 right-2 w-24 h-24 b bg-neo-muted rotate-12" aria-hidden="true"></div>
+      <i class="fa-solid fa-star spin-slow absolute -top-2 right-6 text-6xl text-neo-sec drop-shadow-[4px_4px_0_#000]" aria-hidden="true"></i>
+      <div class="relative w-64 h-80 sm:w-72 sm:h-96 b bg-white sh-l rotate-3 overflow-hidden" style="border-width:8px">
+        <img src="assets/profile.png" alt="Portrait of Qaidy Rasyid Hidayat" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/FFD93D/000000?text=Profile'">
+      </div>
+      <span class="badge bg-neo-accent absolute bottom-4 left-0 -rotate-6 animate-bounce">Open to work</span>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="bg-black text-neo-sec bb overflow-hidden py-3" aria-hidden="true">
+  <div class="marq font-black uppercase text-2xl tracking-widest" id="marq"></div>
+</div>
+
+<!-- WHAT I DO -->
+<section id="services" class="relative bb py-16 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden">
+  <div class="absolute inset-0 halftone pointer-events-none" style="opacity:.08" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl lg:text-8xl mb-14"><span class="stroke">What do</span> <span class="inline-block b bg-neo-sec px-3 rotate-1 sh-m">I do?</span></h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="card b bg-white sh-l -rotate-1">
+        <span class="badge bg-neo-sec rotate-6 absolute -top-5 -right-3 z-10">Android</span>
+        <div class="bb bg-neo-muted px-6 py-4 flex items-center justify-between"><span class="badge bg-white">Mobile</span><i class="fa-solid fa-star text-xl"></i></div>
+        <div class="p-6 space-y-4">
+          <div class="w-16 h-16 b bg-neo-accent sh-s flex items-center justify-center"><i class="fa-solid fa-mobile-screen text-3xl"></i></div>
+          <h3 class="font-black uppercase text-3xl tracking-tight leading-none">Flutter Developer</h3>
+          <p class="text-lg leading-snug">I build beautiful cross-platform mobile apps for Android using Flutter and Dart.</p>
         </div>
-    </footer>
+      </div>
+      <div class="card b bg-white sh-l rotate-1 md:mt-8">
+        <span class="badge bg-neo-accent -rotate-6 absolute -top-5 -right-3 z-10">Web</span>
+        <div class="bb bg-neo-sec px-6 py-4 flex items-center justify-between"><span class="badge bg-white">Front</span><i class="fa-solid fa-star text-xl"></i></div>
+        <div class="p-6 space-y-4">
+          <div class="w-16 h-16 b bg-neo-muted sh-s flex items-center justify-center"><i class="fa-solid fa-desktop text-3xl"></i></div>
+          <h3 class="font-black uppercase text-3xl tracking-tight leading-none">Front End Developer</h3>
+          <p class="text-lg leading-snug">I build responsive and user-friendly websites using HTML, CSS, JavaScript, Tailwind CSS, and Bootstrap.</p>
+        </div>
+      </div>
+      <div class="card b bg-white sh-l -rotate-2">
+        <span class="badge bg-neo-muted rotate-3 absolute -top-5 -right-3 z-10">APIs</span>
+        <div class="bb bg-neo-accent px-6 py-4 flex items-center justify-between"><span class="badge bg-white">Back</span><i class="fa-solid fa-star text-xl"></i></div>
+        <div class="p-6 space-y-4">
+          <div class="w-16 h-16 b bg-neo-sec sh-s flex items-center justify-center"><i class="fa-solid fa-server text-3xl"></i></div>
+          <h3 class="font-black uppercase text-3xl tracking-tight leading-none">Back End Developer</h3>
+          <p class="text-lg leading-snug">I build server-side logic and APIs using PHP &amp; Laravel, with database integration via MySQL and Supabase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+<!-- SKILLS (yellow + halftone) -->
+<section id="skills" class="relative bb bg-neo-sec py-16 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden">
+  <div class="absolute inset-0 halftone" style="opacity:.12" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl lg:text-8xl mb-14"><span class="inline-block b bg-white px-3 -rotate-2 sh-m">Skills</span></h2>
+    <ul id="skill-list" class="flex flex-wrap gap-5 sm:gap-6"></ul>
+  </div>
+</section>
 
-        /* Marquee */
-        const words = ['Flutter', 'Laravel', 'Supabase', 'PHP', 'Dart', 'Tailwind', 'JavaScript'];
-        const strip = words.map(w => `<span class="px-6">${w} <i class="fa-solid fa-star text-neo-accent text-lg"></i></span>`).join('');
-        $('#marq').innerHTML = strip + strip + strip + strip;
+<!-- EXPERIENCE (violet + grid) -->
+<section id="experience" class="bb bg-neo-muted grid-bg py-16 md:py-24 px-4 sm:px-6 md:px-8">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl lg:text-8xl mb-14"><span class="inline-block b bg-neo-accent px-3 rotate-1 sh-m">Experience</span></h2>
+    <div id="exp-list" class="space-y-10"></div>
+  </div>
+</section>
 
-        /* Skills: sticker badges, alternating color + tilt */
-        const skills = ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'Dart', 'Tailwind CSS', 'Bootstrap', 'Supabase', 'Flutter'];
-        const fills = ['bg-neo-accent', 'bg-white', 'bg-neo-muted'], tilts = ['-rotate-2', 'rotate-1', 'rotate-3', '-rotate-1'];
-        $('#skill-list').innerHTML = skills.map((s, i) => `<li class="b ${fills[i % 3]} ${tilts[i % 4]} ${i % 5 === 4 ? 'rounded-full' : ''} sh-m px-5 sm:px-7 py-3 font-black uppercase text-base sm:text-xl tracking-tight hover:rotate-6 hover:-translate-y-1 transition-all duration-100 cursor-default">${s}</li>`).join('');
+<div class="bg-neo-accent bb overflow-hidden py-3" aria-hidden="true"><div class="marq font-black uppercase text-2xl tracking-widest" id="marq2" style="animation-direction:reverse"></div></div>
 
-        /* Experience */
-        const exp = [
-            ['SMPIT Persada Bhakti', 'Bekasi, Indonesia', ['Taught web development fundamentals including HTML, CSS, and JavaScript to students', 'Guided students in building their first responsive web pages from scratch', 'Introduced students to modern frameworks and best practices in web development']],
-            ['SMPIT Cikal Harapan', 'BSD City, Tangerang Selatan', ['Delivered hands-on web development sessions covering HTML, CSS, JavaScript, and PHP', 'Assisted students in understanding the logic behind front-end and back-end development', "Created engaging learning materials and exercises tailored to students' skill levels"]],
-            ['SMAN 3 Yogyakarta', 'Yogyakarta, Indonesia', ['Conducted web development training sessions with focus on real-world project building', 'Taught HTML, CSS, JavaScript, and introduced students to frameworks like Bootstrap & Tailwind', 'Mentored students through individual projects and helped debug their code hands-on']]
-        ];
-        const hd = ['bg-neo-sec', 'bg-neo-accent', 'bg-white'], rot = ['-rotate-1', 'rotate-1', '-rotate-1'];
-        $('#exp-list').innerHTML = exp.map((e, i) => `<article class="card b bg-white sh-l ${rot[i]} ${i % 2 ? 'md:ml-12' : 'md:mr-12'}">
+<!-- PROJECTS -->
+<section id="project" class="bb py-16 md:py-24 px-4 sm:px-6 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl lg:text-8xl mb-14"><span class="stroke">Selected</span> <span class="inline-block b bg-neo-sec px-3 -rotate-1 sh-m">Project</span></h2>
+    <div id="slider" class="overflow-hidden pb-6 pt-2">
+      <div id="track" class="flex transition-transform duration-300 ease-out"></div>
+    </div>
+    <div class="flex justify-center items-center gap-4 sm:gap-6 mt-6">
+      <button id="prev" aria-label="Previous project" class="btn bg-white w-14 !px-0"><i class="fa-solid fa-arrow-left text-lg"></i></button>
+      <div id="dots" class="flex gap-2"></div>
+      <button id="next" aria-label="Next project" class="btn bg-white w-14 !px-0"><i class="fa-solid fa-arrow-right text-lg"></i></button>
+    </div>
+    <div class="mt-14 flex flex-col items-center gap-5 text-center">
+      <p class="font-black uppercase tracking-[0.2em] text-sm"><i class="fa-solid fa-star"></i> These are just a few highlights <i class="fa-solid fa-star"></i></p>
+      <a href="https://github.com/Qaidy?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn bg-neo-sec"><i class="fa-brands fa-github text-xl"></i> Explore all my projects on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA (red) -->
+<section id="contact" class="relative overflow-hidden bb bg-neo-accent py-16 md:py-24 px-4 sm:px-6 md:px-8">
+  <div class="absolute inset-0 halftone" style="opacity:.12" aria-hidden="true"></div>
+  <i class="fa-solid fa-star spin-slow absolute top-6 left-6 text-5xl text-neo-sec" aria-hidden="true"></i>
+  <div class="absolute bottom-6 right-6 w-16 h-16 rounded-full b bg-neo-muted" aria-hidden="true"></div>
+  <div class="relative max-w-3xl mx-auto b bg-white sh-l p-8 sm:p-12 text-center space-y-6 rotate-1">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.9] text-4xl sm:text-6xl">Have a project or want to work with me?</h2>
+    <p class="text-xl">Please contact me by clicking the button below.</p>
+    <button type="button" class="open-hire btn bg-neo-sec text-lg w-full sm:w-auto">Hire Me <i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-100">
+  <div id="modal-box" class="relative w-full max-w-lg bg-neo-bg b shadow-[12px_12px_0_0_#000] p-6 sm:p-8 scale-95 transition-transform duration-100 max-h-[95vh] overflow-y-auto">
+    <button id="modal-close" aria-label="Close" class="absolute top-4 right-4 w-12 h-12 bg-neo-accent b sh-s flex items-center justify-center active:translate-x-1 active:translate-y-1 active:shadow-none"><i class="fa-solid fa-xmark text-xl"></i></button>
+    <div class="mb-6 pr-14">
+      <span class="badge bg-neo-sec -rotate-2 mb-3">Let's connect &amp; collaborate</span>
+      <h3 id="modal-title" class="font-black uppercase tracking-tighter text-4xl leading-none">Get in touch</h3>
+      <p class="mt-2">Choose your preferred way to contact me:</p>
+    </div>
+    <div class="flex flex-col gap-5">
+      <a href="https://wa.me/6285880675129?text=Hello%20Qaidy%2C%20I'm%20interested%20in%20working%20with%20you!" target="_blank" rel="noopener noreferrer" class="card flex items-center gap-4 p-4 b bg-white sh-m">
+        <span class="w-14 h-14 b bg-neo-sec flex items-center justify-center text-3xl shrink-0"><i class="fa-brands fa-whatsapp"></i></span>
+        <span><b class="block font-black uppercase text-xl">WhatsApp</b><span class="block">+62 858-8067-5129</span><span class="block text-sm font-medium">Chat directly via WhatsApp</span></span>
+      </a>
+      <a href="mailto:qaidyidn@gmail.com?subject=Project%20Inquiry%20-%20Collaboration" class="card flex items-center gap-4 p-4 b bg-white sh-m">
+        <span class="w-14 h-14 b bg-neo-accent flex items-center justify-center text-3xl shrink-0"><i class="fa-solid fa-envelope"></i></span>
+        <span class="min-w-0"><b class="block font-black uppercase text-xl">Email</b><span class="block break-all">qaidyidn@gmail.com</span><span class="block text-sm font-medium">Send project proposals or inquiries</span></span>
+      </a>
+    </div>
+    <div class="mt-6 pt-5 bt flex flex-wrap items-center justify-between gap-3">
+      <span class="text-xs font-black uppercase tracking-widest">Copy contact:</span>
+      <div class="flex gap-2 flex-wrap">
+        <button type="button" data-copy="085880675129" data-msg="WhatsApp number copied!" class="copy text-xs font-black bg-white hover:bg-neo-sec px-3 py-2 b sh-s flex items-center gap-1.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all duration-100"><i class="fa-solid fa-copy"></i> 085880675129</button>
+        <button type="button" data-copy="qaidyidn@gmail.com" data-msg="Email copied!" class="copy text-xs font-black bg-white hover:bg-neo-sec px-3 py-2 b sh-s flex items-center gap-1.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all duration-100"><i class="fa-solid fa-copy"></i> qaidyidn@gmail.com</button>
+      </div>
+    </div>
+    <div id="toast" role="status" class="hidden absolute -bottom-6 left-1/2 -translate-x-1/2 bg-black text-neo-sec text-xs font-black uppercase px-4 py-2 whitespace-nowrap"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-neo-sec bt py-12 relative overflow-hidden">
+  <div class="absolute inset-0 halftone" style="opacity:.1" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <p class="font-black uppercase tracking-wider text-sm b bg-white px-3 py-2 sh-s">&copy; 2026 Qaidy Rasyid Hidayat. All rights reserved.</p>
+    <div class="flex items-center gap-4">
+      <a href="https://github.com/Qaidy" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-14 h-14 b bg-white sh-s flex items-center justify-center hover:bg-neo-accent hover:-translate-y-1 transition-all duration-100"><i class="fa-brands fa-github text-2xl"></i></a>
+      <a href="https://www.linkedin.com/in/qaidy-rasyid-810633376/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-14 h-14 b bg-white sh-s flex items-center justify-center hover:bg-neo-muted hover:-translate-y-1 transition-all duration-100"><i class="fa-brands fa-linkedin-in text-2xl"></i></a>
+      <a href="https://www.instagram.com/qaidyrsyd/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-14 h-14 b rounded-full bg-white sh-s flex items-center justify-center hover:bg-neo-accent hover:-translate-y-1 transition-all duration-100"><i class="fa-brands fa-instagram text-2xl"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+
+/* Marquee */
+const words=['Flutter','Laravel','Supabase','PHP','Dart','Tailwind','JavaScript'];
+const strip=words.map(w=>`<span class="px-6">${w} <i class="fa-solid fa-star text-neo-accent text-lg"></i></span>`).join('');
+$('#marq').innerHTML=strip+strip+strip+strip;
+const strip2=['Let\'s build something','Open to work','Hire me'].map(w=>`<span class="px-6">${w} <i class="fa-solid fa-star text-neo-sec text-lg"></i></span>`).join('');
+$('#marq2').innerHTML=strip2+strip2+strip2+strip2;
+
+/* Skills: sticker badges, alternating color + tilt */
+const skills=['HTML','CSS','JavaScript','PHP','Laravel','Dart','Tailwind CSS','Bootstrap','Supabase','Flutter'];
+const fills=['bg-neo-accent','bg-white','bg-neo-muted'],tilts=['-rotate-2','rotate-1','rotate-3','-rotate-1'];
+$('#skill-list').innerHTML=skills.map((s,i)=>`<li class="b ${fills[i%3]} ${tilts[i%4]} ${i%5===4?'rounded-full':''} sh-m px-5 sm:px-7 py-3 font-black uppercase text-base sm:text-xl tracking-tight hover:rotate-6 hover:-translate-y-1 transition-all duration-100 cursor-default">${s}</li>`).join('');
+
+/* Experience */
+const exp=[
+ ['SMPIT Persada Bhakti','Bekasi, Indonesia',['Taught web development fundamentals including HTML, CSS, and JavaScript to students','Guided students in building their first responsive web pages from scratch','Introduced students to modern frameworks and best practices in web development']],
+ ['SMPIT Cikal Harapan','BSD City, Tangerang Selatan',['Delivered hands-on web development sessions covering HTML, CSS, JavaScript, and PHP','Assisted students in understanding the logic behind front-end and back-end development',"Created engaging learning materials and exercises tailored to students' skill levels"]],
+ ['SMAN 3 Yogyakarta','Yogyakarta, Indonesia',['Conducted web development training sessions with focus on real-world project building','Taught HTML, CSS, JavaScript, and introduced students to frameworks like Bootstrap & Tailwind','Mentored students through individual projects and helped debug their code hands-on']]
+];
+const hd=['bg-neo-sec','bg-neo-accent','bg-white'],rot=['-rotate-1','rotate-1','-rotate-1'];
+$('#exp-list').innerHTML=exp.map((e,i)=>`<article class="card b bg-white sh-l ${rot[i]} ${i%2?'md:ml-12':'md:mr-12'}">
  <div class="bb ${hd[i]} px-5 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3"><h3 class="font-black uppercase tracking-tighter text-2xl sm:text-3xl leading-none">${e[0]}</h3><span class="badge bg-white rotate-3">IT Trainer</span></div>
  <div class="p-5 sm:p-6"><p class="font-black uppercase tracking-widest text-sm mb-4"><i class="fa-solid fa-location-dot"></i> ${e[1]}</p>
- <ul class="space-y-3 text-base sm:text-lg leading-snug">${e[2].map(x => `<li class="flex gap-3"><i class="fa-solid fa-star mt-1.5 text-sm shrink-0"></i><span>${x}</span></li>`).join('')}</ul></div></article>`).join('');
+ <ul class="space-y-3 text-base sm:text-lg leading-snug">${e[2].map(x=>`<li class="flex gap-3"><i class="fa-solid fa-star mt-1.5 text-sm shrink-0"></i><span>${x}</span></li>`).join('')}</ul></div></article>`).join('');
 
-        /* Projects */
-        const projects = [
-            ['AyoRental', 'bg-neo-accent', 'https://github.com/Qaidy/AyoRental', 'AyoRental is a web-based car rental platform that allows users to browse, book, and rent cars with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Supabase for real-time data management.', ['assets/ayorental.png']],
-            ['Blossom', 'bg-neo-sec', 'https://github.com/Qaidy/Blossom.git', 'Blossom is an e-commerce platform that allows users to browse, purchase, and manage their orders with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Stripe for real-time payment processing.', ['assets/blossom.png']],
-            ['Vaultify', 'bg-neo-muted', 'https://github.com/Qaidy/vaultify.git', 'Vaultify is a production-ready, full-stack personal financial management platform designed to help users effortlessly track their wealth with real-time insights. Built with an emphasis on clean UI/UX and performance, it bridges the gap between complex financial tracking and intuitive design.', ['assets/vault.png']],
-            ['Singer Explorer', 'bg-neo-accent', 'https://github.com/Qaidy/Singer-Explorer.git', 'Singer Explorer is a mobile application built with Flutter & Dart designed to discover and explore music artists, comprehensive singer profiles, biographies, and their top hit tracks. Features an intuitive mobile UI, smooth navigation, and artist cataloging.', ['assets/home.png', 'assets/detail.png']],
-            ['Code Stash', 'bg-neo-sec', 'https://github.com/Qaidy/codestash', 'Code Stash is a developer-focused snippet management tool designed to help programmers save, organize, and quickly retrieve reusable code snippets. Built for efficiency and clarity, it streamlines the workflow for developers who want to keep their best code at their fingertips.', ['assets/codestash.png']]
-        ];
-        $('#track').innerHTML = projects.map((p, i) => {
-            const imgs = p[4].length > 1
-                ? `<div class="flex items-center justify-center gap-4">${p[4].map((s, j) => `<div class="w-1/2 max-w-[250px] b bg-white sh-m overflow-hidden ${j ? 'rotate-2' : '-rotate-2'}"><img src="${s}" alt="${p[0]} screen ${j + 1}" class="w-full h-auto block"></div>`).join('')}</div>`
-                : `<div class="b bg-white sh-m overflow-hidden ${i % 2 ? 'rotate-1' : '-rotate-1'}"><img src="${p[4][0]}" alt="${p[0]} preview" class="w-full h-auto block" onerror="this.src='https://placehold.co/800x600/FFD93D/000000?text=${encodeURIComponent(p[0])}'"></div>`;
-            return `<div class="w-full shrink-0 px-4 sm:px-5 pb-4"><div class="b bg-white sh-l">
-  <div class="bb ${p[1]} px-4 sm:px-6 py-3 flex items-center justify-between gap-3"><span class="badge bg-white -rotate-2">Project #${i + 1}</span><span class="flex gap-2" aria-hidden="true"><span class="w-4 h-4 b bg-white rounded-full"></span><span class="w-4 h-4 b bg-white"></span><span class="w-4 h-4 b bg-black rounded-full"></span></span></div>
+/* Projects */
+const projects=[
+ ['AyoRental','bg-neo-accent','https://github.com/Qaidy/AyoRental','AyoRental is a web-based car rental platform that allows users to browse, book, and rent cars with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Supabase for real-time data management.',['assets/ayorental.png']],
+ ['Blossom','bg-neo-sec','https://github.com/Qaidy/Blossom.git','Blossom is an e-commerce platform that allows users to browse, purchase, and manage their orders with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Stripe for real-time payment processing.',['assets/blossom.png']],
+ ['Vaultify','bg-neo-muted','https://github.com/Qaidy/vaultify.git','Vaultify is a production-ready, full-stack personal financial management platform designed to help users effortlessly track their wealth with real-time insights. Built with an emphasis on clean UI/UX and performance, it bridges the gap between complex financial tracking and intuitive design.',['assets/vault.png']],
+ ['Singer Explorer','bg-neo-accent','https://github.com/Qaidy/Singer-Explorer.git','Singer Explorer is a mobile application built with Flutter & Dart designed to discover and explore music artists, comprehensive singer profiles, biographies, and their top hit tracks. Features an intuitive mobile UI, smooth navigation, and artist cataloging.',['assets/home.png','assets/detail.png']],
+ ['Code Stash','bg-neo-sec','https://github.com/Qaidy/codestash','Code Stash is a developer-focused snippet management tool designed to help programmers save, organize, and quickly retrieve reusable code snippets. Built for efficiency and clarity, it streamlines the workflow for developers who want to keep their best code at their fingertips.',['assets/codestash.png']]
+];
+$('#track').innerHTML=projects.map((p,i)=>{
+ const imgs=p[4].length>1
+  ? `<div class="flex items-center justify-center gap-4">${p[4].map((s,j)=>`<div class="w-1/2 max-w-[250px] b bg-white sh-m overflow-hidden ${j?'rotate-2':'-rotate-2'}"><img src="${s}" alt="${p[0]} screen ${j+1}" class="w-full h-auto block"></div>`).join('')}</div>`
+  : `<div class="b bg-white sh-m overflow-hidden ${i%2?'rotate-1':'-rotate-1'}"><img src="${p[4][0]}" alt="${p[0]} preview" class="w-full h-auto block" onerror="this.src='https://placehold.co/800x600/FFD93D/000000?text=${encodeURIComponent(p[0])}'"></div>`;
+ return `<div class="w-full shrink-0 px-4 sm:px-5 pb-4"><div class="b bg-white sh-l">
+  <div class="bb ${p[1]} px-4 sm:px-6 py-3 flex items-center justify-between gap-3"><span class="badge bg-white -rotate-2">Project #${i+1}</span><span class="flex gap-2" aria-hidden="true"><span class="w-4 h-4 b bg-white rounded-full"></span><span class="w-4 h-4 b bg-white"></span><span class="w-4 h-4 b bg-black rounded-full"></span></span></div>
   <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center p-6 sm:p-10">
    <div class="lg:col-span-2 flex flex-col items-start gap-5">
     <h3 class="font-black uppercase tracking-tighter leading-[0.85] text-4xl sm:text-6xl">${p[0]}</h3>
     <p class="text-lg leading-snug">${p[3]}</p>
     <a href="${p[2]}" target="_blank" rel="noopener noreferrer" class="btn bg-neo-sec w-full sm:w-auto">More detail <i class="fa-solid fa-arrow-right"></i></a>
    </div>
-   <div class="lg:col-span-3 py-2">${imgs}</div></div></div></div>`
-        }).join('');
+   <div class="lg:col-span-3 py-2">${imgs}</div></div></div></div>`}).join('');
 
-        let cur = 0; const N = projects.length, track = $('#track'), dots = $('#dots');
-        dots.innerHTML = projects.map((_, i) => `<button class="dot" data-i="${i}" aria-label="Go to project ${i + 1}"></button>`).join('');
-        function go(i) { cur = (i + N) % N; track.style.transform = `translateX(-${cur * 100}%)`; $$('.dot').forEach((d, j) => d.classList.toggle('on', j === cur)) }
-        $('#next').onclick = () => go(cur + 1); $('#prev').onclick = () => go(cur - 1);
-        dots.onclick = e => { const b = e.target.closest('.dot'); if (b) go(+b.dataset.i) };
-        let sx = 0; const sl = $('#slider');
-        sl.addEventListener('touchstart', e => sx = e.changedTouches[0].screenX, { passive: true });
-        sl.addEventListener('touchend', e => { const d = sx - e.changedTouches[0].screenX; if (Math.abs(d) > 50) go(cur + (d > 0 ? 1 : -1)) }, { passive: true });
-        go(0);
+let cur=0;const N=projects.length,track=$('#track'),dots=$('#dots');
+dots.innerHTML=projects.map((_,i)=>`<button class="dot" data-i="${i}" aria-label="Go to project ${i+1}"></button>`).join('');
+function go(i){cur=(i+N)%N;track.style.transform=`translateX(-${cur*100}%)`;$$('.dot').forEach((d,j)=>d.classList.toggle('on',j===cur))}
+$('#next').onclick=()=>go(cur+1);$('#prev').onclick=()=>go(cur-1);
+dots.onclick=e=>{const b=e.target.closest('.dot');if(b)go(+b.dataset.i)};
+let sx=0;const sl=$('#slider');
+sl.addEventListener('touchstart',e=>sx=e.changedTouches[0].screenX,{passive:true});
+sl.addEventListener('touchend',e=>{const d=sx-e.changedTouches[0].screenX;if(Math.abs(d)>50)go(cur+(d>0?1:-1))},{passive:true});
+go(0);
 
-        /* Mobile menu */
-        const mm = $('#mobile-menu'), mb = $('#menu-btn');
-        function setMenu(o) { mm.classList.toggle('hidden', !o); mb.setAttribute('aria-expanded', o); mb.firstElementChild.className = 'fa-solid text-xl ' + (o ? 'fa-xmark' : 'fa-bars') }
-        mb.onclick = () => setMenu(mm.classList.contains('hidden'));
-        $$('.mnav').forEach(a => a.onclick = () => setMenu(false));
+/* Mobile menu */
+const mm=$('#mobile-menu'),mb=$('#menu-btn');
+function setMenu(o){mm.classList.toggle('hidden',!o);mb.setAttribute('aria-expanded',o);mb.firstElementChild.className='fa-solid text-xl '+(o?'fa-xmark':'fa-bars')}
+mb.onclick=()=>setMenu(mm.classList.contains('hidden'));
+$$('.mnav').forEach(a=>a.onclick=()=>setMenu(false));
 
-        /* Modal + copy */
-        const md = $('#modal'), box = $('#modal-box'), toast = $('#toast'); let tt;
-        function openM() { md.classList.remove('opacity-0', 'pointer-events-none'); box.classList.replace('scale-95', 'scale-100'); document.body.classList.add('overflow-hidden'); $('#modal-close').focus() }
-        function closeM() { md.classList.add('opacity-0', 'pointer-events-none'); box.classList.replace('scale-100', 'scale-95'); document.body.classList.remove('overflow-hidden') }
-        $$('.open-hire').forEach(b => b.onclick = e => { e.preventDefault(); setMenu(false); openM() });
-        $('#modal-close').onclick = closeM; md.onclick = e => { if (e.target === md) closeM() };
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeM() });
-        function flash(m) { toast.textContent = m; toast.classList.remove('hidden'); clearTimeout(tt); tt = setTimeout(() => toast.classList.add('hidden'), 2200) }
-        function copy(t, m) {
-            const fb = () => { const a = document.createElement('textarea'); a.value = t; a.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(a); a.select(); try { document.execCommand('copy'); flash(m) } catch (e) { } a.remove() };
-            if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(t).then(() => flash(m)).catch(fb); else fb();
-        }
-        $$('.copy').forEach(b => b.onclick = () => copy(b.dataset.copy, b.dataset.msg));
-    </script>
+/* Modal + copy */
+const md=$('#modal'),box=$('#modal-box'),toast=$('#toast');let tt;
+function openM(){md.classList.remove('opacity-0','pointer-events-none');box.classList.replace('scale-95','scale-100');document.body.classList.add('overflow-hidden');$('#modal-close').focus()}
+function closeM(){md.classList.add('opacity-0','pointer-events-none');box.classList.replace('scale-100','scale-95');document.body.classList.remove('overflow-hidden')}
+$$('.open-hire').forEach(b=>b.onclick=e=>{e.preventDefault();setMenu(false);openM()});
+$('#modal-close').onclick=closeM;md.onclick=e=>{if(e.target===md)closeM()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+function flash(m){toast.textContent=m;toast.classList.remove('hidden');clearTimeout(tt);tt=setTimeout(()=>toast.classList.add('hidden'),2200)}
+function copy(t,m){
+ const fb=()=>{const a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();try{document.execCommand('copy');flash(m)}catch(e){}a.remove()};
+ if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t).then(()=>flash(m)).catch(fb);else fb();
+}
+$$('.copy').forEach(b=>b.onclick=()=>copy(b.dataset.copy,b.dataset.msg));
+</script>
 </body>
-
 </html>
