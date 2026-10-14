@@ -336,7 +336,7 @@
             <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl mb-14"><span
                     class="stroke">Selected</span> <span
                     class="inline-block b bg-neo-sec px-3 -rotate-1 sh-m">Project</span></h2>
-            <div id="slider" class="overflow-hidden -mx-2 px-2 pb-6 pt-2">
+            <div id="slider" class="overflow-hidden pb-6 pt-2">
                 <div id="track" class="flex transition-transform duration-300 ease-out"></div>
             </div>
             <div class="flex justify-center items-center gap-4 sm:gap-6 mt-6">
@@ -469,7 +469,7 @@
 
         /* Projects */
         const projects = [
-            ['AyoRental', 'bg-neo-accent', 'https://github.com/Qaidy/AyoRental', 'AyoRental is a web-based car rental platform that allows users to browse, book, and rent cars with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Supabase for real-time data management.', ['assets/rental.png']],
+            ['AyoRental', 'bg-neo-accent', 'https://github.com/Qaidy/AyoRental', 'AyoRental is a web-based car rental platform that allows users to browse, book, and rent cars with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Supabase for real-time data management.', ['assets/ayorental.png']],
             ['Blossom', 'bg-neo-sec', 'https://github.com/Qaidy/Blossom.git', 'Blossom is an e-commerce platform that allows users to browse, purchase, and manage their orders with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Stripe for real-time payment processing.', ['assets/blossom.png']],
             ['Vaultify', 'bg-neo-muted', 'https://github.com/Qaidy/vaultify.git', 'Vaultify is a production-ready, full-stack personal financial management platform designed to help users effortlessly track their wealth with real-time insights. Built with an emphasis on clean UI/UX and performance, it bridges the gap between complex financial tracking and intuitive design.', ['assets/vault.png']],
             ['Singer Explorer', 'bg-neo-accent', 'https://github.com/Qaidy/Singer-Explorer.git', 'Singer Explorer is a mobile application built with Flutter & Dart designed to discover and explore music artists, comprehensive singer profiles, biographies, and their top hit tracks. Features an intuitive mobile UI, smooth navigation, and artist cataloging.', ['assets/home.png', 'assets/detail.png']],
@@ -479,7 +479,7 @@
             const imgs = p[4].length > 1
                 ? `<div class="flex items-center justify-center gap-4">${p[4].map((s, j) => `<div class="w-1/2 max-w-[250px] b bg-white sh-m overflow-hidden ${j ? 'rotate-2' : '-rotate-2'}"><img src="${s}" alt="${p[0]} screen ${j + 1}" class="w-full h-auto block"></div>`).join('')}</div>`
                 : `<div class="b bg-white sh-m overflow-hidden ${i % 2 ? 'rotate-1' : '-rotate-1'}"><img src="${p[4][0]}" alt="${p[0]} preview" class="w-full h-auto block" onerror="this.src='https://placehold.co/800x600/FFD93D/000000?text=${encodeURIComponent(p[0])}'"></div>`;
-            return `<div class="w-full shrink-0 px-2 pb-4"><div class="b bg-white sh-l">
+            return `<div class="w-full shrink-0 px-4 sm:px-5 pb-4"><div class="b bg-white sh-l">
   <div class="bb ${p[1]} px-4 sm:px-6 py-3 flex items-center justify-between gap-3"><span class="badge bg-white -rotate-2">Project #${i + 1}</span><span class="flex gap-2" aria-hidden="true"><span class="w-4 h-4 b bg-white rounded-full"></span><span class="w-4 h-4 b bg-white"></span><span class="w-4 h-4 b bg-black rounded-full"></span></span></div>
   <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center p-6 sm:p-10">
    <div class="lg:col-span-2 flex flex-col items-start gap-5">
