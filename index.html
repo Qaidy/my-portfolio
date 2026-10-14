@@ -1,1028 +1,306 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="shortcut icon" href="favicon.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qaidy Rasyid Hidayat — Portfolio</title>
-    <!-- Tailwind Play CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Bricolage Grotesque & Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#FFE600',
-                        secondary: '#FF54B0',
-                        brandBg: '#FFFEE0',
-                        surface: '#FFFFFF',
-                        darkText: '#000000'
-                    },
-                    fontFamily: {
-                        heading: ['"Bricolage Grotesque"', 'sans-serif'],
-                        body: ['"Plus Jakarta Sans"', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Neubrutalist Custom Borders & Shadows */
-        .brutalist-border-md {
-            border: 3px solid #000000;
-        }
-
-        .brutalist-border-sm {
-            border: 2px solid #000000;
-        }
-
-        .brutalist-shadow {
-            box-shadow: 4px 4px 0px 0px #000000;
-        }
-
-        .brutalist-shadow-lg {
-            box-shadow: 6px 6px 0px 0px #000000;
-        }
-
-        .brutalist-shadow-sm {
-            box-shadow: 2px 2px 0px 0px #000000;
-        }
-
-        .active-dot {
-            width: 40px;
-            background-color: #FFE600;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qaidy Rasyid Hidayat — Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script>
+tailwind.config={theme:{extend:{colors:{neo:{bg:'#FFFDF5',accent:'#FF6B6B',sec:'#FFD93D',muted:'#C4B5FD'}},fontFamily:{sans:['"Space Grotesk"','sans-serif']}}}}
+</script>
+<style>
+/* Neo-brutalism tokens: 4px black borders, zero-blur offset shadows, snap motion */
+.b{border:4px solid #000}.bb{border-bottom:4px solid #000}.bt{border-top:4px solid #000}
+.sh-s{box-shadow:4px 4px 0 0 #000}.sh-m{box-shadow:6px 6px 0 0 #000}.sh-l{box-shadow:8px 8px 0 0 #000}
+@media(min-width:768px){.sh-m{box-shadow:8px 8px 0 0 #000}.sh-l{box-shadow:12px 12px 0 0 #000}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3.5rem;padding:0 1.5rem;border:4px solid #000;box-shadow:6px 6px 0 0 #000;font-weight:700;font-size:.875rem;text-transform:uppercase;letter-spacing:.05em;transition:all .1s linear;cursor:pointer}
+.btn:hover{box-shadow:8px 8px 0 0 #000;filter:brightness(.95)}.btn:active{transform:translate(4px,4px);box-shadow:none}
+.card{position:relative;transition:transform .2s ease-out,box-shadow .2s ease-out}
+.card:hover{transform:translateY(-6px);box-shadow:14px 14px 0 0 #000}
+.badge{display:inline-block;border:4px solid #000;box-shadow:4px 4px 0 0 #000;font-weight:900;font-size:.8rem;text-transform:uppercase;letter-spacing:.15em;padding:.25rem .75rem;transition:transform .2s ease-out}
+.badge:hover{transform:rotate(12deg)}
+.stroke{color:transparent;-webkit-text-stroke:2px #000}
+.halftone{background-image:radial-gradient(#000 1.5px,transparent 1.5px);background-size:20px 20px}
+.grid-bg{background-size:40px 40px;background-image:linear-gradient(to right,rgba(0,0,0,.1) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,.1) 1px,transparent 1px)}
+.tri{clip-path:polygon(50% 0%,0% 100%,100% 100%)}
+.spin-slow{animation:spin 10s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.marq{display:flex;width:max-content;animation:marq 25s linear infinite}@keyframes marq{to{transform:translateX(-50%)}}
+.dot{width:20px;height:20px;border:4px solid #000;background:#fff;transition:all .1s linear}.dot.on{width:48px;background:#FF6B6B}
+a:focus-visible,button:focus-visible{outline:none;box-shadow:0 0 0 2px #FFFDF5,0 0 0 5px #000}
+@media(prefers-reduced-motion:reduce){.spin-slow,.marq,.animate-bounce,.animate-pulse{animation:none!important}*{transition:none!important}}
+</style>
 </head>
+<body class="bg-neo-bg text-black font-sans font-bold overflow-x-hidden selection:bg-neo-sec">
 
-<body class="bg-brandBg text-darkText font-body selection:bg-primary selection:text-darkText overflow-x-hidden">
-
-    <!-- Top Sticky Header -->
-    <header class="sticky top-0 bg-brandBg border-b-[3px] border-darkText z-50" data-aos="fade-down">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo Section -->
-            <a href="#home"
-                class="flex items-center gap-2 font-heading font-black text-2xl uppercase tracking-wider bg-primary px-3 py-1.5 brutalist-border-sm brutalist-shadow-sm transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none">
-                QAIDY
-            </a>
-
-            <!-- Central Nav Links (Desktop) -->
-            <nav class="hidden md:flex items-center gap-8 font-heading font-extrabold text-lg">
-                <a href="#home" class="hover:text-secondary transition-colors py-2 relative group">Home</a>
-                <a href="#services" class="hover:text-secondary transition-colors py-2 relative group">What I Do</a>
-                <a href="#skills" class="hover:text-secondary transition-colors py-2 relative group">Skills</a>
-                <a href="#experience" class="hover:text-secondary transition-colors py-2 relative group">Experience</a>
-                <a href="#project" class="hover:text-secondary transition-colors py-2 relative group">Project</a>
-            </nav>
-
-            <!-- Action Buttons & Hamburger (Mobile) -->
-            <div class="flex items-center gap-3">
-                <button type="button"
-                    class="open-hire-modal hidden sm:inline-block font-heading font-black text-base bg-primary px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer">
-                    Hire Me
-                </button>
-
-                <!-- Responsive Hamburger Menu Trigger -->
-                <button id="menu-toggle-btn" aria-label="Toggle Menu"
-                    class="md:hidden flex flex-col justify-center items-center w-12 h-12 bg-white brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all active:translate-x-[1px] active:translate-y-[1px] active:shadow-none">
-                    <span class="w-6 h-0.5 bg-black my-0.5 transition-all duration-300" id="hamburger-line-1"></span>
-                    <span class="w-6 h-0.5 bg-black my-0.5 transition-all duration-300" id="hamburger-line-2"></span>
-                    <span class="w-6 h-0.5 bg-black my-0.5 transition-all duration-300" id="hamburger-line-3"></span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Navigation Drawer Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-brandBg/95 z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-between p-8 border-l-[4px] border-black">
-        <div class="flex flex-col space-y-6 pt-20">
-            <a href="#home"
-                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Home</a>
-            <a href="#services"
-                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">What
-                I Do</a>
-            <a href="#skills"
-                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Skills</a>
-            <a href="#experience"
-                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Experience</a>
-            <a href="#project"
-                class="mobile-nav-link font-heading font-black text-3xl uppercase tracking-wider text-darkText hover:text-secondary transition-colors">Project</a>
-        </div>
-        <div class="w-full">
-            <button type="button"
-                class="open-hire-modal mobile-nav-link w-full text-center font-heading font-black text-xl bg-primary block py-4 rounded-xl brutalist-border-md brutalist-shadow cursor-pointer">
-                Hire Me Now
-            </button>
-        </div>
+<!-- NAV -->
+<header class="sticky top-0 z-50 bg-neo-bg bb">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+    <a href="#home" class="b bg-neo-accent px-3 py-1 font-black text-2xl uppercase tracking-tighter sh-s -rotate-2 hover:rotate-0 transition-transform duration-100">Qaidy</a>
+    <nav class="hidden md:flex items-center gap-4 font-black uppercase text-sm tracking-wide">
+      <a href="#home" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Home</a>
+      <a href="#services" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">What I Do</a>
+      <a href="#skills" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Skills</a>
+      <a href="#experience" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Experience</a>
+      <a href="#project" class="border-4 border-transparent px-2 py-1 hover:border-black hover:bg-neo-accent hover:shadow-[4px_4px_0_0_#000] transition-all duration-100">Project</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button type="button" class="open-hire btn bg-neo-sec hidden sm:inline-flex">Hire Me</button>
+      <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="md:hidden w-14 h-14 b bg-white sh-s flex items-center justify-center active:translate-x-1 active:translate-y-1 active:shadow-none"><i class="fa-solid fa-bars text-xl"></i></button>
     </div>
-
-    <!-- Hero Section -->
-    <section id="home" class="py-12 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <!-- Left Grid Content -->
-            <div class="lg:col-span-7 flex flex-col items-start space-y-6">
-                <span class="text-lg md:text-xl font-heading font-bold flex items-center gap-2" data-aos="fade-up"
-                    data-aos-delay="100">
-                    Hi There <span class="animate-bounce"><i class="fa-solid fa-hand"></i></span>
-                </span>
-                <h1 class="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight"
-                    data-aos="fade-up" data-aos-delay="200">
-                    I'm <span
-                        class="text-primary bg-darkText px-4 py-1.5 brutalist-border-sm inline-block transform -rotate-1">Qaidy
-                        Rasyid</span> Hidayat
-                </h1>
-
-                <div class="w-full" data-aos="fade-right" data-aos-delay="300">
-                    <!-- Custom Horizontal Line Divider -->
-                    <div class="h-1 bg-darkText w-full my-6 relative">
-                        <span
-                            class="absolute -top-3.5 left-8 sm:left-12 bg-brandBg px-4 font-heading font-extrabold text-md sm:text-xl border-x-2 border-darkText">
-                            Flutter Developer | Full Stack Developer
-                        </span>
-                    </div>
-                </div>
-
-                <p class="text-darkText/80 text-base md:text-lg max-w-xl font-medium leading-relaxed" data-aos="fade-up"
-                    data-aos-delay="400">
-                    Mobile & Web Developer experienced in Flutter, PHP, Laravel, Supabase, and front-end technologies
-                    like HTML, CSS, JavaScript, Tailwind & Bootstrap. A quick learner, team player, and ready for new
-                    challenges.
-                </p>
-
-                <!-- Action Button Grid -->
-                <div class="flex flex-wrap gap-4 pt-4" data-aos="fade-up" data-aos-delay="500">
-                    <a href="https://drive.google.com/file/d/1vuhecKcPA86ozy_SgEuX9vcvOt0qRTN7/view?usp=sharing"
-                        target="_blank" rel="noopener noreferrer"
-                        class="font-heading font-black text-base bg-primary text-darkText px-6 py-3.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-                        <i class="fa-solid fa-file-arrow-down"></i> Download CV
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right Grid Visuals -->
-            <div class="lg:col-span-5 flex justify-center relative" data-aos="zoom-in" data-aos-delay="300">
-                <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
-                    <!-- Starburst SVG element (Top Right) -->
-                    <div class="absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 text-primary animate-pulse z-10">
-                        <svg viewBox="0 0 100 100" fill="currentColor"
-                            class="w-full h-full drop-shadow-[2px_2px_0_#000]">
-                            <path
-                                d="M50 0 L58 35 L90 20 L70 50 L100 58 L70 66 L90 90 L58 75 L50 100 L42 75 L10 90 L30 66 L0 58 L30 50 L10 20 L42 35 Z"
-                                stroke="#000000" stroke-width="4" stroke-linejoin="miter"></path>
-                        </svg>
-                    </div>
-
-                    <!-- Zigzag element (Bottom Left) -->
-                    <div
-                        class="absolute -bottom-4 -left-4 w-20 h-10 sm:w-24 sm:h-12 text-secondary z-10 animate-bounce">
-                        <svg viewBox="0 0 100 40" fill="currentColor"
-                            class="w-full h-full drop-shadow-[2px_2px_0_#000]">
-                            <path d="M0 20 L20 0 L40 20 L60 0 L80 20 L100 0 L100 20 L80 40 L60 20 L40 40 L20 20 L0 40 Z"
-                                stroke="#000000" stroke-width="3" stroke-linejoin="miter"></path>
-                        </svg>
-                    </div>
-
-                    <!-- Core Circular Profile Picture Mask -->
-                    <div
-                        class="w-full h-full rounded-full overflow-hidden brutalist-border-md bg-white flex items-center justify-center relative">
-                        <div class="absolute inset-0 bg-primary/10"></div>
-                        <div class="z-10 absolute inset-0 flex items-center justify-center p-4">
-                            <div class="w-full h-full rounded-full bg-cover bg-center border-[3px] border-black"
-                                style="background-image: url('assets/profile.png');"
-                                onerror="this.style.backgroundImage='url(https://placehold.co/400x400/FFE600/000000?text=Profile)'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- "What Do I Do?" Section -->
-    <section id="services" class="py-16 bg-brandBg border-t-[3px] border-darkText">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl uppercase inline-block">
-                    What Do I Do?
-                </h2>
-                <div class="flex justify-center mt-2">
-                    <span class="text-primary tracking-widest font-bold text-2xl font-heading">•••••</span>
-                </div>
-            </div>
-
-            <!-- Services Row Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-surface p-8 rounded-lg brutalist-border-md brutalist-shadow flex flex-col items-start space-y-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="w-12 h-12 bg-[#D1C4E9] rounded-lg border-2 border-darkText flex items-center justify-center brutalist-shadow-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6" fill="#000000">
-                            <path
-                                d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.37zm.159 11.26l-6.077 6.078 6.077 6.078 3.7-3.699-2.378-2.379 2.378-2.378-3.7-3.7z" />
-                        </svg>
-                    </div>
-                    <h3 class="font-heading font-black text-2xl">Flutter Developer</h3>
-                    <p class="text-darkText/80 text-sm font-medium leading-relaxed">
-                        I build beautiful cross-platform mobile apps for Android using Flutter and Dart.
-                    </p>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="bg-surface p-8 rounded-lg brutalist-border-md brutalist-shadow flex flex-col items-start space-y-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="w-12 h-12 bg-[#F8BBD0] rounded-lg border-2 border-darkText flex items-center justify-center brutalist-shadow-sm">
-                        <i class="fa-solid fa-desktop text-xl text-darkText"></i>
-                    </div>
-                    <h3 class="font-heading font-black text-2xl">Front End Developer</h3>
-                    <p class="text-darkText/80 text-sm font-medium leading-relaxed">
-                        I build responsive and user-friendly websites using HTML, CSS, JavaScript, Tailwind CSS, and
-                        Bootstrap.
-                    </p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-surface p-8 rounded-lg brutalist-border-md brutalist-shadow flex flex-col items-start space-y-4 transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="w-12 h-12 bg-[#C8E6C9] rounded-lg border-2 border-darkText flex items-center justify-center brutalist-shadow-sm">
-                        <i class="fa-solid fa-server text-xl text-darkText"></i>
-                    </div>
-                    <h3 class="font-heading font-black text-2xl">Back End Developer</h3>
-                    <p class="text-darkText/80 text-sm font-medium leading-relaxed">
-                        I build server-side logic and APIs using PHP & Laravel, with database integration via MySQL and
-                        Supabase.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-brandBg border-t-[3px] border-darkText">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl uppercase inline-block">
-                    Skills
-                </h2>
-                <div class="flex justify-center mt-2">
-                    <span class="text-primary tracking-widest font-bold text-2xl font-heading">•••••</span>
-                </div>
-            </div>
-
-            <!-- Intersecting badge list cloud elements -->
-            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-                <div class="font-heading font-black text-base bg-primary text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm transition-transform cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="100">
-                    HTML
-                </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="200">
-                    CSS
-                </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="300">
-                    JavaScript
-                </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="400">
-                    PHP
-                </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="500">
-                    Laravel
-                </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="600">
-                    Dart
-                </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="700">
-                    Tailwind CSS
-                </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="800">
-                    Bootstrap
-                </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="900">
-                    Supabase
-                </div>
-                <div class="font-heading font-black text-base bg-surface text-darkText px-6 py-3.5 rounded-full brutalist-border-sm brutalist-shadow-sm hover:bg-primary transition-all duration-150 cursor-default select-none"
-                    data-aos="zoom-in" data-aos-delay="1000">
-                    Flutter
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-16 bg-brandBg border-t-[3px] border-darkText">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl uppercase inline-block">
-                    Experience
-                </h2>
-                <div class="flex justify-center mt-2">
-                    <span class="text-primary tracking-widest font-bold text-2xl font-heading">•••••</span>
-                </div>
-            </div>
-
-            <!-- Vertically stacked details -->
-            <div class="space-y-12">
-                <!-- Job Item 1 -->
-                <div class="border-b-[3px] border-dashed border-darkText/30 pb-10 last:border-none" data-aos="fade-up">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                        <h3 class="text-2xl font-heading font-black text-darkText">SMPIT Persada Bhakti</h3>
-                        <span
-                            class="font-heading font-extrabold text-sm bg-primary px-3 py-1.5 brutalist-border-sm">Bekasi</span>
-                    </div>
-                    <div
-                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 text-sm font-bold text-darkText/70">
-                        <span>IT Trainer</span>
-                        <span>Bekasi, Indonesia</span>
-                    </div>
-                    <ul class="list-disc list-inside space-y-2 text-darkText/80 text-sm font-medium">
-                        <li>Taught web development fundamentals including HTML, CSS, and JavaScript to students</li>
-                        <li>Guided students in building their first responsive web pages from scratch</li>
-                        <li>Introduced students to modern frameworks and best practices in web development</li>
-                    </ul>
-                </div>
-
-                <!-- Job Item 2 -->
-                <div class="border-b-[3px] border-dashed border-darkText/30 pb-10 last:border-none" data-aos="fade-up">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                        <h3 class="text-2xl font-heading font-black text-darkText">SMPIT Cikal Harapan</h3>
-                        <span class="font-heading font-extrabold text-sm bg-primary px-3 py-1.5 brutalist-border-sm">BSD
-                            City</span>
-                    </div>
-                    <div
-                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 text-sm font-bold text-darkText/70">
-                        <span>IT Trainer</span>
-                        <span>BSD City, Tangerang Selatan</span>
-                    </div>
-                    <ul class="list-disc list-inside space-y-2 text-darkText/80 text-sm font-medium">
-                        <li>Delivered hands-on web development sessions covering HTML, CSS, JavaScript, and PHP</li>
-                        <li>Assisted students in understanding the logic behind front-end and back-end development</li>
-                        <li>Created engaging learning materials and exercises tailored to students' skill levels</li>
-                    </ul>
-                </div>
-
-                <!-- Job Item 3 -->
-                <div class="border-b-[3px] border-dashed border-darkText/30 pb-10 last:border-none" data-aos="fade-up">
-                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                        <h3 class="text-2xl font-heading font-black text-darkText">SMAN 3 Yogyakarta</h3>
-                        <span
-                            class="font-heading font-extrabold text-sm bg-primary px-3 py-1.5 brutalist-border-sm">Yogyakarta</span>
-                    </div>
-                    <div
-                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 text-sm font-bold text-darkText/70">
-                        <span>IT Trainer</span>
-                        <span>Yogyakarta, Indonesia</span>
-                    </div>
-                    <ul class="list-disc list-inside space-y-2 text-darkText/80 text-sm font-medium">
-                        <li>Conducted web development training sessions with focus on real-world project building</li>
-                        <li>Taught HTML, CSS, JavaScript, and introduced students to frameworks like Bootstrap &
-                            Tailwind</li>
-                        <li>Mentored students through individual projects and helped debug their code hands-on</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Selected Project Section -->
-    <section id="project" class="py-16 bg-brandBg border-t-[3px] border-darkText">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 relative" data-aos="fade-up">
-                <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl uppercase inline-block">
-                    Selected Project
-                </h2>
-                <div class="flex justify-center mt-2">
-                    <span class="text-primary tracking-widest font-bold text-2xl font-heading">•••••</span>
-                </div>
-            </div>
-
-            <!-- Active Sliding Card Showcase Frame -->
-            <div id="project-slider-container" class="relative overflow-hidden min-h-[500px] lg:min-h-[400px]"
-                data-aos="fade-up" data-aos-delay="200">
-                <div id="slider-track" class="flex transition-transform duration-500 ease-in-out">
-
-                    <!-- Slide 1: CRM Design -->
-                    <div class="w-full flex-shrink-0 px-2">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brandBg p-4">
-                            <!-- Left Details Box -->
-                            <div class="flex flex-col items-start space-y-6">
-                                <span
-                                    class="bg-[#D1C4E9] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT
-                                    #1 — AyoRental</span>
-                                <h3 class="font-heading font-black text-3xl sm:text-4xl">AyoRental</h3>
-                                <p class="text-darkText/80 text-base leading-relaxed max-w-lg font-medium">
-                                    AyoRental is a web-based car rental platform that allows users to browse, book, and
-                                    rent cars with ease. It features a modern, user-friendly interface with advanced
-                                    filtering options and seamless integration with Supabase for real-time data
-                                    management.
-                                </p>
-                                <button
-                                    class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-                                    <a href="https://github.com/Qaidy/AyoRental" target="_blank"
-                                        rel="noopener noreferrer" class="text-darkText">More Detail <i
-                                            class="fa-solid fa-arrow-right"></i></a>
-                                </button>
-                            </div>
-                            <!-- Right Picture Container Mockup -->
-                            <div
-                                class="relative w-full rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
-                                <img src="assets/rental.png" alt="AyoRental Preview" class="w-full h-auto block"
-                                    onerror="this.src='https://placehold.co/800x600/FFE600/000000?text=AyoRental'" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2: E-Commerce Platform -->
-                    <div class="w-full flex-shrink-0 px-2">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brandBg p-4">
-                            <!-- Left Details Box -->
-                            <div class="flex flex-col items-start space-y-6">
-                                <span
-                                    class="bg-[#F8BBD0] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT
-                                    #2 — BLOSSOM</span>
-                                <h3 class="font-heading font-black text-3xl sm:text-4xl">Blossom</h3>
-                                <p class="text-darkText/80 text-base leading-relaxed max-w-lg font-medium">
-                                    Blossom is an e-commerce platform that allows users to browse, purchase, and manage
-                                    their orders with ease. It features a modern, user-friendly interface with advanced
-                                    filtering options and seamless integration with Stripe for real-time payment
-                                    processing.
-                                </p>
-                                <button
-                                    class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-                                    <a href="https://github.com/Qaidy/Blossom.git" target="_blank"
-                                        rel="noopener noreferrer" class="text-darkText">More Detail <i
-                                            class="fa-solid fa-arrow-right"></i></a>
-                                </button>
-                            </div>
-                            <!-- Right Picture Container Mockup -->
-                            <div
-                                class="relative w-full rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
-                                <img src="assets/blossom.png" alt="Blossom Preview" class="w-full h-auto block"
-                                    onerror="this.src='https://placehold.co/800x600/FFE600/000000?text=Blossom'" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3: Task Management Dashboard -->
-                    <div class="w-full flex-shrink-0 px-2">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brandBg p-4">
-                            <!-- Left Details Box -->
-                            <div class="flex flex-col items-start space-y-6">
-                                <span
-                                    class="bg-[#C8E6C9] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT
-                                    #3 — VAULTIFY</span>
-                                <h3 class="font-heading font-black text-3xl sm:text-4xl">Vaultify</h3>
-                                <p class="text-darkText/80 text-base leading-relaxed max-w-lg font-medium">
-                                    Vaultify is a production-ready, full-stack personal financial management platform
-                                    designed to help users effortlessly track their wealth with real-time insights.
-                                    Built with an emphasis on clean UI/UX and performance, Vaultify bridges the gap
-                                    between complex financial tracking and intuitive design.
-                                </p>
-                                <button
-                                    class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-                                    <a href="https://github.com/Qaidy/vaultify.git" target="_blank"
-                                        rel="noopener noreferrer" class="text-darkText">More Detail <i
-                                            class="fa-solid fa-arrow-right"></i></a>
-                                </button>
-                            </div>
-                            <!-- Right Picture Container Mockup -->
-                            <div
-                                class="relative w-full rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
-                                <img src="assets/vault.png" alt="Vaultify Preview" class="w-full h-auto block"
-                                    onerror="this.src='https://placehold.co/800x600/FFE600/000000?text=Vaultify'" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4: Singer Explorer Mobile App -->
-                    <div class="w-full flex-shrink-0 px-2">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brandBg p-4">
-                            <!-- Left Details Box -->
-                            <div class="flex flex-col items-start space-y-6">
-                                <span
-                                    class="bg-[#FFE082] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT
-                                    #4 — SINGER EXPLORER</span>
-                                <h3 class="font-heading font-black text-3xl sm:text-4xl">Singer Explorer</h3>
-                                <p class="text-darkText/80 text-base leading-relaxed max-w-lg font-medium">
-                                    Singer Explorer is a mobile application built with Flutter & Dart designed to
-                                    discover and explore music artists, comprehensive singer profiles, biographies,
-                                    and their top hit tracks. Features an intuitive mobile UI, smooth navigation,
-                                    and artist cataloging.
-                                </p>
-                                <button
-                                    class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-                                    <a href="https://github.com/Qaidy/Singer-Explorer.git" target="_blank"
-                                        rel="noopener noreferrer" class="text-darkText">More Detail <i
-                                            class="fa-solid fa-arrow-right"></i></a>
-                                </button>
-                            </div>
-                            <!-- Right Picture Container Mockup -->
-                            <div
-                                class="relative w-full flex items-center justify-center gap-4 sm:gap-6 lg:gap-8 py-2">
-                                <div
-                                    class="w-1/2 max-w-[240px] sm:max-w-[280px] lg:max-w-[300px] rounded-2xl overflow-hidden brutalist-border-sm brutalist-shadow bg-white transform -rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300">
-                                    <img src="assets/home.png" alt="Singer Explorer List Screen"
-                                        class="w-full h-auto block" />
-                                </div>
-                                <div
-                                    class="w-1/2 max-w-[240px] sm:max-w-[280px] lg:max-w-[300px] rounded-2xl overflow-hidden brutalist-border-sm brutalist-shadow bg-white transform rotate-1 hover:rotate-0 hover:scale-105 transition-all duration-300">
-                                    <img src="assets/detail.png" alt="Singer Explorer Detail Screen"
-                                        class="w-full h-auto block" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Slide 5: Code Stash -->
-                    <div class="w-full flex-shrink-0 px-2">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-brandBg p-4">
-                            <!-- Left Details Box -->
-                            <div class="flex flex-col items-start space-y-6">
-                                <span
-                                    class="bg-[#B2EBF2] font-heading font-black text-xs uppercase px-3 py-1 brutalist-border-sm">PROJECT
-                                    #5 — CODE STASH</span>
-                                <h3 class="font-heading font-black text-3xl sm:text-4xl">Code Stash</h3>
-                                <p class="text-darkText/80 text-base leading-relaxed max-w-lg font-medium">
-                                    Code Stash is a developer-focused snippet management tool designed to help
-                                    programmers save, organize, and quickly retrieve reusable code snippets.
-                                    Built for efficiency and clarity, it streamlines the workflow for developers
-                                    who want to keep their best code at their fingertips.
-                                </p>
-                                <button
-                                    class="font-heading font-black text-base bg-primary text-darkText px-5 py-2.5 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
-                                    <a href="https://github.com/Qaidy/codestash" target="_blank"
-                                        rel="noopener noreferrer" class="text-darkText">More Detail <i
-                                            class="fa-solid fa-arrow-right"></i></a>
-                                </button>
-                            </div>
-                            <!-- Right Picture Container Mockup -->
-                            <div
-                                class="relative w-full rounded-lg overflow-hidden brutalist-border-md brutalist-shadow-lg bg-white">
-                                <img src="assets/codestash.png" alt="Code Stash Preview" class="w-full h-auto block"
-                                    onerror="this.src='https://placehold.co/800x600/B2EBF2/000000?text=Code+Stash'" />
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Controls Overlay with Classic Arrow Keys Style -->
-            <div class="flex justify-center items-center gap-6 mt-8">
-                <button id="slider-prev-btn" aria-label="Previous Slide"
-                    class="w-12 h-12 rounded-full bg-white text-darkText brutalist-border-sm brutalist-shadow hover:bg-primary flex items-center justify-center transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
-                    <i class="fa-solid fa-arrow-left text-xl"></i>
-                </button>
-
-                <!-- Page Indicator Dots Matching Graphic -->
-                <div class="flex gap-3" id="indicator-container">
-                    <button class="indicator-dot w-10 h-3 bg-primary brutalist-border-sm rounded-full transition-all"
-                        data-index="0"></button>
-                    <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all"
-                        data-index="1"></button>
-                    <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all"
-                        data-index="2"></button>
-                    <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all"
-                        data-index="3"></button>
-                    <button class="indicator-dot w-6 h-3 bg-surface brutalist-border-sm rounded-full transition-all"
-                        data-index="4"></button>
-                </div>
-
-                <button id="slider-next-btn" aria-label="Next Slide"
-                    class="w-12 h-12 rounded-full bg-white text-darkText brutalist-border-sm brutalist-shadow hover:bg-primary flex items-center justify-center transition-all active:translate-x-[2px] active:translate-y-[2px] active:shadow-none">
-                    <i class="fa-solid fa-arrow-right text-xl"></i>
-                </button>
-            </div>
-
-            <!-- GitHub CTA Banner -->
-            <div class="mt-12 flex flex-col items-center gap-4" data-aos="fade-up">
-                <div class="flex items-center gap-3 text-darkText/40">
-                    <div class="h-px w-16 bg-darkText/20"></div>
-                    <i class="fa-solid fa-code text-xs"></i>
-                    <div class="h-px w-16 bg-darkText/20"></div>
-                </div>
-                <p
-                    class="font-heading font-black text-sm sm:text-base text-darkText/50 uppercase tracking-widest text-center">
-                    These are just a few highlights
-                </p>
-                <a href="https://github.com/Qaidy?tab=repositories" target="_blank" rel="noopener noreferrer"
-                    class="group flex items-center gap-3 border-2 border-dashed border-darkText/30 hover:border-darkText bg-transparent hover:bg-primary px-6 py-3 rounded-lg font-heading font-black text-base text-darkText transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]">
-                    <i class="fa-brands fa-github text-xl transition-transform duration-300 group-hover:rotate-12"></i>
-                    <span>Explore All My Projects on GitHub</span>
-                    <i
-                        class="fa-solid fa-arrow-right text-sm transition-transform duration-300 group-hover:translate-x-1"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Invitation Section / CTA Box -->
-    <section id="contact" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-brandBg brutalist-border-md brutalist-shadow-lg p-10 sm:p-14 text-center rounded-xl relative overflow-hidden flex flex-col items-center justify-center space-y-6"
-            data-aos="zoom-in">
-            <h2 class="font-heading font-black text-2xl sm:text-3xl md:text-5xl text-darkText max-w-2xl leading-tight">
-                Have a project or want to work with me?
-            </h2>
-            <p class="text-sm sm:text-lg font-heading font-extrabold text-darkText/70 max-w-md">
-                Please contact me by clicking the button below
-            </p>
-            <button type="button"
-                class="open-hire-modal font-heading font-black text-lg bg-primary text-darkText px-8 py-4 rounded-lg brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-flex items-center gap-2 cursor-pointer">
-                Hire Me <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </div>
-    </section>
-
-    <!-- Hire Me Contact Moda l -->
-    <div id="hire-modal"
-        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
-        <div id="hire-modal-box"
-            class="relative w-full max-w-lg bg-brandBg brutalist-border-md shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] rounded-2xl p-6 sm:p-8 transform scale-95 transition-all duration-300">
-            <!-- Close Button -->
-            <button id="close-hire-modal" aria-label="Close Modal"
-                class="absolute top-4 right-4 w-10 h-10 bg-primary hover:bg-secondary hover:text-white text-darkText brutalist-border-sm brutalist-shadow-sm rounded-lg flex items-center justify-center transition-all hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none cursor-pointer">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-
-            <!-- Header -->
-            <div class="mb-6 text-left pr-10">
-                <span
-                    class="inline-block bg-primary text-black font-heading font-black text-xs uppercase px-3 py-1 rounded-md brutalist-border-sm brutalist-shadow-sm mb-3">
-                    Let's Connect & Collaborate
-                </span>
-                <h3 class="font-heading font-black text-2xl sm:text-3xl text-darkText">
-                    Get In Touch
-                </h3>
-                <p class="font-heading font-semibold text-sm sm:text-base text-darkText/70 mt-1">
-                    Choose your preferred way to contact me:
-                </p>
-            </div>
-
-            <!-- Contact Options Cards -->
-            <div class="flex flex-col gap-4">
-                <!-- WhatsApp Option Card -->
-                <a href="https://wa.me/6285880675129?text=Hello%20Qaidy%2C%20I'm%20interested%20in%20working%20with%20you!"
-                    target="_blank" rel="noopener noreferrer"
-                    class="group relative flex items-center justify-between p-4 sm:p-5 bg-[#E8F9EE] hover:bg-[#D4F5DE] brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-xl cursor-pointer">
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-[#25D366] text-white flex items-center justify-center brutalist-border-sm text-2xl flex-shrink-0 transition-transform group-hover:scale-110">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <h4 class="font-heading font-black text-lg text-darkText">WhatsApp</h4>
-                                <span
-                                    class="bg-[#25D366] text-white font-heading font-black text-[10px] uppercase px-2 py-0.5 rounded-full">Fast
-                                    Response</span>
-                            </div>
-                            <p class="text-sm font-bold text-darkText font-mono mt-0.5">+62 858-8067-5129</p>
-                            <p class="text-xs text-darkText/70 mt-0.5 font-medium">Chat directly via WhatsApp</p>
-                        </div>
-                    </div>
-                    <div
-                        class="hidden sm:flex w-9 h-9 rounded-lg bg-white brutalist-border-sm items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
-                        <i
-                            class="fa-solid fa-arrow-right text-darkText text-sm group-hover:translate-x-0.5 transition-transform"></i>
-                    </div>
-                </a>
-
-                <!-- Email Option Card -->
-                <a href="mailto:qaidyidn@gmail.com?subject=Project%20Inquiry%20-%20Collaboration"
-                    class="group relative flex items-center justify-between p-4 sm:p-5 bg-[#FFF0F8] hover:bg-[#FFE0F0] brutalist-border-sm brutalist-shadow transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-xl cursor-pointer">
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-secondary text-white flex items-center justify-center brutalist-border-sm text-2xl flex-shrink-0 transition-transform group-hover:scale-110">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                        <div>
-                            <div class="flex items-center gap-2">
-                                <h4 class="font-heading font-black text-lg text-darkText">Email</h4>
-                                <span
-                                    class="bg-secondary text-white font-heading font-black text-[10px] uppercase px-2 py-0.5 rounded-full">Official
-                                    Email</span>
-                            </div>
-                            <p class="text-sm font-bold text-darkText font-mono mt-0.5">qaidyidn@gmail.com</p>
-                            <p class="text-xs text-darkText/70 mt-0.5 font-medium">Send project proposals or inquiries</p>
-                        </div>
-                    </div>
-                    <div
-                        class="hidden sm:flex w-9 h-9 rounded-lg bg-white brutalist-border-sm items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
-                        <i
-                            class="fa-solid fa-arrow-right text-darkText text-sm group-hover:translate-x-0.5 transition-transform"></i>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Quick Copy Buttons Section -->
-            <div class="mt-6 pt-5 border-t-2 border-black/10 flex flex-wrap items-center justify-between gap-3">
-                <span class="text-xs font-heading font-extrabold text-darkText/60 uppercase tracking-wider">Copy Contact:</span>
-                <div class="flex items-center gap-2 flex-wrap">
-                    <button type="button" id="copy-phone-btn"
-                        class="text-xs font-heading font-black bg-white hover:bg-primary px-3 py-1.5 rounded-md brutalist-border-sm brutalist-shadow-sm transition-all flex items-center gap-1.5 active:scale-95 cursor-pointer">
-                        <i class="fa-solid fa-copy text-xs"></i> <span>085880675129</span>
-                    </button>
-                    <button type="button" id="copy-email-btn"
-                        class="text-xs font-heading font-black bg-white hover:bg-primary px-3 py-1.5 rounded-md brutalist-border-sm brutalist-shadow-sm transition-all flex items-center gap-1.5 active:scale-95 cursor-pointer">
-                        <i class="fa-solid fa-copy text-xs"></i> <span>qaidyidn@gmail.com</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Copy Toast Feedback -->
-            <div id="copy-toast"
-                class="hidden absolute -bottom-4 left-1/2 -translate-x-1/2 bg-black text-primary border-2 border-primary text-xs font-heading font-black px-4 py-2 rounded-lg shadow-lg z-20 transition-all">
-                Copied to clipboard!
-            </div>
-        </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-neo-muted bt halftone">
+    <div class="flex flex-col gap-4 p-4">
+      <a href="#home" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Home</a>
+      <a href="#services" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">What I Do</a>
+      <a href="#skills" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Skills</a>
+      <a href="#experience" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Experience</a>
+      <a href="#project" class="mnav b bg-white sh-s px-4 py-3 font-black text-2xl uppercase">Project</a>
+      <button type="button" class="open-hire btn bg-neo-accent w-full text-lg">Hire Me Now</button>
     </div>
+  </div>
+</header>
 
-    <!-- Dark Footer -->
-    <footer class="bg-black text-white py-12 border-t-[3px] border-darkText">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <!-- Left Copyright text -->
-            <p class="text-sm font-semibold tracking-wider text-gray-400">
-                &copy; 2026 Qaidy Rasyid Hidayat. All rights reserved.
-            </p>
+<!-- HERO: 60/40 split, sticker collage on the right -->
+<section id="home" class="relative overflow-hidden bb grid-bg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-24 grid lg:grid-cols-5 gap-12 items-center">
+    <div class="lg:col-span-3 flex flex-col items-start gap-6">
+      <span class="badge bg-neo-sec -rotate-2">Flutter Developer | Full Stack Developer</span>
+      <h1 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl xl:text-8xl">
+        <span class="block">I'm</span>
+        <span class="stroke block">Qaidy</span>
+        <span class="inline-block b bg-neo-accent px-3 py-1 -rotate-2 sh-m mt-2 mr-2">Rasyid</span>
+        <span class="inline-block b bg-neo-muted px-3 py-1 rotate-1 sh-m mt-2">Hidayat</span>
+      </h1>
+      <p class="text-lg sm:text-xl leading-snug max-w-xl b bg-white p-4 sh-m">
+        Mobile &amp; Web Developer experienced in Flutter, PHP, Laravel, Supabase, and front-end technologies like HTML, CSS, JavaScript, Tailwind &amp; Bootstrap. A quick learner, team player, and ready for new challenges.
+      </p>
+      <div class="flex flex-wrap gap-4 w-full sm:w-auto">
+        <a href="https://drive.google.com/file/d/1vuhecKcPA86ozy_SgEuX9vcvOt0qRTN7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn bg-neo-accent w-full sm:w-auto"><i class="fa-solid fa-file-arrow-down"></i> Download CV</a>
+        <button type="button" class="open-hire btn bg-white w-full sm:w-auto">Hire Me <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="lg:col-span-2 relative flex justify-center py-8">
+      <div class="absolute top-0 left-4 w-20 h-20 rounded-full b bg-neo-sec" aria-hidden="true"></div>
+      <div class="absolute bottom-0 right-2 w-24 h-24 b bg-neo-muted rotate-12" aria-hidden="true"></div>
+      <i class="fa-solid fa-star spin-slow absolute -top-2 right-6 text-6xl text-neo-sec drop-shadow-[4px_4px_0_#000]" aria-hidden="true"></i>
+      <div class="relative w-64 h-80 sm:w-72 sm:h-96 b bg-white sh-l rotate-3 overflow-hidden" style="border-width:8px">
+        <img src="assets/profile.png" alt="Portrait of Qaidy Rasyid Hidayat" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x500/FFD93D/000000?text=Profile'">
+      </div>
+      <span class="badge bg-neo-accent absolute bottom-4 left-0 -rotate-6 animate-bounce">Open to work</span>
+    </div>
+  </div>
+</section>
 
-            <!-- Right Social Profiles in circular format -->
-            <div class="flex items-center gap-4">
-                <!-- GitHub -->
-                <a href="https://github.com/Qaidy" target="_blank" aria-label="GitHub Profile"
-                    class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all bg-transparent hover:bg-primary hover:text-black hover:border-black">
-                    <i class="fa-brands fa-github text-lg"></i>
-                </a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/qaidy-rasyid-810633376/" target="_blank"
-                    aria-label="LinkedIn Profile"
-                    class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all bg-transparent hover:bg-primary hover:text-black hover:border-black">
-                    <i class="fa-brands fa-linkedin-in text-lg"></i>
-                </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/qaidyrsyd/" target="_blank" aria-label="Instagram Profile"
-                    class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center transition-all bg-transparent hover:bg-primary hover:text-black hover:border-black">
-                    <i class="fa-brands fa-instagram text-lg"></i>
-                </a>
-            </div>
+<!-- MARQUEE -->
+<div class="bg-black text-neo-sec bb overflow-hidden py-3" aria-hidden="true">
+  <div class="marq font-black uppercase text-2xl tracking-widest" id="marq"></div>
+</div>
+
+<!-- WHAT I DO -->
+<section id="services" class="bb py-16 md:py-24 px-4 sm:px-6 md:px-8 halftone-soft">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl mb-14"><span class="stroke">What do</span> <span class="inline-block b bg-neo-sec px-3 rotate-1 sh-m">I do?</span></h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="card b bg-white sh-l -rotate-1">
+        <div class="bb bg-neo-muted px-6 py-4 flex items-center justify-between"><span class="badge bg-white">Mobile</span><i class="fa-solid fa-star text-xl"></i></div>
+        <div class="p-6 space-y-4">
+          <div class="w-16 h-16 b bg-neo-accent sh-s flex items-center justify-center"><i class="fa-solid fa-mobile-screen text-3xl"></i></div>
+          <h3 class="font-black uppercase text-3xl tracking-tight leading-none">Flutter Developer</h3>
+          <p class="text-lg leading-snug">I build beautiful cross-platform mobile apps for Android using Flutter and Dart.</p>
         </div>
-    </footer>
+      </div>
+      <div class="card b bg-white sh-l rotate-1 md:mt-8">
+        <div class="bb bg-neo-sec px-6 py-4 flex items-center justify-between"><span class="badge bg-white">Front</span><i class="fa-solid fa-star text-xl"></i></div>
+        <div class="p-6 space-y-4">
+          <div class="w-16 h-16 b bg-neo-muted sh-s flex items-center justify-center"><i class="fa-solid fa-desktop text-3xl"></i></div>
+          <h3 class="font-black uppercase text-3xl tracking-tight leading-none">Front End Developer</h3>
+          <p class="text-lg leading-snug">I build responsive and user-friendly websites using HTML, CSS, JavaScript, Tailwind CSS, and Bootstrap.</p>
+        </div>
+      </div>
+      <div class="card b bg-white sh-l -rotate-2">
+        <div class="bb bg-neo-accent px-6 py-4 flex items-center justify-between"><span class="badge bg-white">Back</span><i class="fa-solid fa-star text-xl"></i></div>
+        <div class="p-6 space-y-4">
+          <div class="w-16 h-16 b bg-neo-sec sh-s flex items-center justify-center"><i class="fa-solid fa-server text-3xl"></i></div>
+          <h3 class="font-black uppercase text-3xl tracking-tight leading-none">Back End Developer</h3>
+          <p class="text-lg leading-snug">I build server-side logic and APIs using PHP &amp; Laravel, with database integration via MySQL and Supabase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- AOS Animation JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100,
-        });
-    </script>
-    <script>
-        window.onload = function () {
-            // --- Hamburger Mobile Navigation Logic ---
-            const menuToggleBtn = document.getElementById('menu-toggle-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuLinks = document.querySelectorAll('.mobile-nav-link');
+<!-- SKILLS (yellow + halftone) -->
+<section id="skills" class="relative bb bg-neo-sec py-16 md:py-24 px-4 sm:px-6 md:px-8 overflow-hidden">
+  <div class="absolute inset-0 halftone" style="opacity:.12" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl mb-14"><span class="inline-block b bg-white px-3 -rotate-2 sh-m">Skills</span></h2>
+    <ul id="skill-list" class="flex flex-wrap gap-5 sm:gap-6"></ul>
+  </div>
+</section>
 
-            const line1 = document.getElementById('hamburger-line-1');
-            const line2 = document.getElementById('hamburger-line-2');
-            const line3 = document.getElementById('hamburger-line-3');
+<!-- EXPERIENCE (violet + grid) -->
+<section id="experience" class="bb bg-neo-muted grid-bg py-16 md:py-24 px-4 sm:px-6 md:px-8">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl mb-14"><span class="inline-block b bg-neo-accent px-3 rotate-1 sh-m">Experience</span></h2>
+    <div id="exp-list" class="space-y-10"></div>
+  </div>
+</section>
 
-            let isMenuOpen = false;
+<!-- PROJECTS -->
+<section id="project" class="bb py-16 md:py-24 px-4 sm:px-6 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.85] text-5xl sm:text-7xl mb-14"><span class="stroke">Selected</span> <span class="inline-block b bg-neo-sec px-3 -rotate-1 sh-m">Project</span></h2>
+    <div id="slider" class="overflow-hidden -mx-2 px-2 pb-6 pt-2">
+      <div id="track" class="flex transition-transform duration-300 ease-out"></div>
+    </div>
+    <div class="flex justify-center items-center gap-4 sm:gap-6 mt-6">
+      <button id="prev" aria-label="Previous project" class="btn bg-white w-14 !px-0"><i class="fa-solid fa-arrow-left text-lg"></i></button>
+      <div id="dots" class="flex gap-2"></div>
+      <button id="next" aria-label="Next project" class="btn bg-white w-14 !px-0"><i class="fa-solid fa-arrow-right text-lg"></i></button>
+    </div>
+    <div class="mt-14 flex flex-col items-center gap-5 text-center">
+      <p class="font-black uppercase tracking-[0.2em] text-sm"><i class="fa-solid fa-star"></i> These are just a few highlights <i class="fa-solid fa-star"></i></p>
+      <a href="https://github.com/Qaidy?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn bg-neo-sec"><i class="fa-brands fa-github text-xl"></i> Explore all my projects on GitHub</a>
+    </div>
+  </div>
+</section>
 
-            function toggleMenu() {
-                isMenuOpen = !isMenuOpen;
-                if (isMenuOpen) {
-                    mobileMenu.classList.remove('translate-x-full');
-                    // Transform hamburger lines to 'X'
-                    line1.classList.add('rotate-45', 'translate-y-1.5');
-                    line2.classList.add('opacity-0');
-                    line3.classList.add('-rotate-45', '-translate-y-1.5');
-                } else {
-                    mobileMenu.classList.add('translate-x-full');
-                    // Reverse 'X' back to standard menu bars
-                    line1.classList.remove('rotate-45', 'translate-y-1.5');
-                    line2.classList.remove('opacity-0');
-                    line3.classList.remove('-rotate-45', '-translate-y-1.5');
-                }
-            }
+<!-- CTA (red) -->
+<section id="contact" class="relative overflow-hidden bb bg-neo-accent py-16 md:py-24 px-4 sm:px-6 md:px-8">
+  <div class="absolute inset-0 halftone" style="opacity:.12" aria-hidden="true"></div>
+  <i class="fa-solid fa-star spin-slow absolute top-6 left-6 text-5xl text-neo-sec" aria-hidden="true"></i>
+  <div class="absolute bottom-6 right-6 w-16 h-16 rounded-full b bg-neo-muted" aria-hidden="true"></div>
+  <div class="relative max-w-3xl mx-auto b bg-white sh-l p-8 sm:p-12 text-center space-y-6 rotate-1">
+    <h2 class="font-black uppercase tracking-tighter leading-[0.9] text-4xl sm:text-6xl">Have a project or want to work with me?</h2>
+    <p class="text-xl">Please contact me by clicking the button below.</p>
+    <button type="button" class="open-hire btn bg-neo-sec text-lg w-full sm:w-auto">Hire Me <i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+</section>
 
-            menuToggleBtn.addEventListener('click', toggleMenu);
+<!-- MODAL -->
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-black/70 opacity-0 pointer-events-none transition-opacity duration-100">
+  <div id="modal-box" class="relative w-full max-w-lg bg-neo-bg b shadow-[12px_12px_0_0_#000] p-6 sm:p-8 scale-95 transition-transform duration-100 max-h-[95vh] overflow-y-auto">
+    <button id="modal-close" aria-label="Close" class="absolute top-4 right-4 w-12 h-12 bg-neo-accent b sh-s flex items-center justify-center active:translate-x-1 active:translate-y-1 active:shadow-none"><i class="fa-solid fa-xmark text-xl"></i></button>
+    <div class="mb-6 pr-14">
+      <span class="badge bg-neo-sec -rotate-2 mb-3">Let's connect &amp; collaborate</span>
+      <h3 id="modal-title" class="font-black uppercase tracking-tighter text-4xl leading-none">Get in touch</h3>
+      <p class="mt-2">Choose your preferred way to contact me:</p>
+    </div>
+    <div class="flex flex-col gap-5">
+      <a href="https://wa.me/6285880675129?text=Hello%20Qaidy%2C%20I'm%20interested%20in%20working%20with%20you!" target="_blank" rel="noopener noreferrer" class="card flex items-center gap-4 p-4 b bg-white sh-m">
+        <span class="w-14 h-14 b bg-neo-sec flex items-center justify-center text-3xl shrink-0"><i class="fa-brands fa-whatsapp"></i></span>
+        <span><b class="block font-black uppercase text-xl">WhatsApp</b><span class="block">+62 858-8067-5129</span><span class="block text-sm font-medium">Chat directly via WhatsApp</span></span>
+      </a>
+      <a href="mailto:qaidyidn@gmail.com?subject=Project%20Inquiry%20-%20Collaboration" class="card flex items-center gap-4 p-4 b bg-white sh-m">
+        <span class="w-14 h-14 b bg-neo-accent flex items-center justify-center text-3xl shrink-0"><i class="fa-solid fa-envelope"></i></span>
+        <span class="min-w-0"><b class="block font-black uppercase text-xl">Email</b><span class="block break-all">qaidyidn@gmail.com</span><span class="block text-sm font-medium">Send project proposals or inquiries</span></span>
+      </a>
+    </div>
+    <div class="mt-6 pt-5 bt flex flex-wrap items-center justify-between gap-3">
+      <span class="text-xs font-black uppercase tracking-widest">Copy contact:</span>
+      <div class="flex gap-2 flex-wrap">
+        <button type="button" data-copy="085880675129" data-msg="WhatsApp number copied!" class="copy text-xs font-black bg-white hover:bg-neo-sec px-3 py-2 b sh-s flex items-center gap-1.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all duration-100"><i class="fa-solid fa-copy"></i> 085880675129</button>
+        <button type="button" data-copy="qaidyidn@gmail.com" data-msg="Email copied!" class="copy text-xs font-black bg-white hover:bg-neo-sec px-3 py-2 b sh-s flex items-center gap-1.5 active:translate-x-1 active:translate-y-1 active:shadow-none transition-all duration-100"><i class="fa-solid fa-copy"></i> qaidyidn@gmail.com</button>
+      </div>
+    </div>
+    <div id="toast" role="status" class="hidden absolute -bottom-6 left-1/2 -translate-x-1/2 bg-black text-neo-sec text-xs font-black uppercase px-4 py-2 whitespace-nowrap"></div>
+  </div>
+</div>
 
-            // Close menu instantly if any interior drawer links are clicked
-            menuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (isMenuOpen) toggleMenu();
-                });
-            });
+<!-- FOOTER -->
+<footer class="bg-neo-sec bt py-12 relative overflow-hidden">
+  <div class="absolute inset-0 halftone" style="opacity:.1" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <p class="font-black uppercase tracking-wider text-sm b bg-white px-3 py-2 sh-s">&copy; 2026 Qaidy Rasyid Hidayat. All rights reserved.</p>
+    <div class="flex items-center gap-4">
+      <a href="https://github.com/Qaidy" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-14 h-14 b bg-white sh-s flex items-center justify-center hover:bg-neo-accent hover:-translate-y-1 transition-all duration-100"><i class="fa-brands fa-github text-2xl"></i></a>
+      <a href="https://www.linkedin.com/in/qaidy-rasyid-810633376/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-14 h-14 b bg-white sh-s flex items-center justify-center hover:bg-neo-muted hover:-translate-y-1 transition-all duration-100"><i class="fa-brands fa-linkedin-in text-2xl"></i></a>
+      <a href="https://www.instagram.com/qaidyrsyd/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-14 h-14 b rounded-full bg-white sh-s flex items-center justify-center hover:bg-neo-accent hover:-translate-y-1 transition-all duration-100"><i class="fa-brands fa-instagram text-2xl"></i></a>
+    </div>
+  </div>
+</footer>
 
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 
-            // --- Neubrutalist Interactive Project Slider ---
-            const sliderTrack = document.getElementById('slider-track');
-            const prevBtn = document.getElementById('slider-prev-btn');
-            const nextBtn = document.getElementById('slider-next-btn');
-            const indicatorDots = document.querySelectorAll('.indicator-dot');
+/* Marquee */
+const words=['Flutter','Laravel','Supabase','PHP','Dart','Tailwind','JavaScript'];
+const strip=words.map(w=>`<span class="px-6">${w} <i class="fa-solid fa-star text-neo-accent text-lg"></i></span>`).join('');
+$('#marq').innerHTML=strip+strip+strip+strip;
 
-            let currentSlide = 0;
-            const totalSlides = sliderTrack ? sliderTrack.children.length : 4;
+/* Skills: sticker badges, alternating color + tilt */
+const skills=['HTML','CSS','JavaScript','PHP','Laravel','Dart','Tailwind CSS','Bootstrap','Supabase','Flutter'];
+const fills=['bg-neo-accent','bg-white','bg-neo-muted'],tilts=['-rotate-2','rotate-1','rotate-3','-rotate-1'];
+$('#skill-list').innerHTML=skills.map((s,i)=>`<li class="b ${fills[i%3]} ${tilts[i%4]} ${i%5===4?'rounded-full':''} sh-m px-5 sm:px-7 py-3 font-black uppercase text-base sm:text-xl tracking-tight hover:rotate-6 hover:-translate-y-1 transition-all duration-100 cursor-default">${s}</li>`).join('');
 
-            function updateSliderPosition() {
-                // Translate layout cleanly on the horizontal axis
-                sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+/* Experience */
+const exp=[
+ ['SMPIT Persada Bhakti','Bekasi, Indonesia',['Taught web development fundamentals including HTML, CSS, and JavaScript to students','Guided students in building their first responsive web pages from scratch','Introduced students to modern frameworks and best practices in web development']],
+ ['SMPIT Cikal Harapan','BSD City, Tangerang Selatan',['Delivered hands-on web development sessions covering HTML, CSS, JavaScript, and PHP','Assisted students in understanding the logic behind front-end and back-end development',"Created engaging learning materials and exercises tailored to students' skill levels"]],
+ ['SMAN 3 Yogyakarta','Yogyakarta, Indonesia',['Conducted web development training sessions with focus on real-world project building','Taught HTML, CSS, JavaScript, and introduced students to frameworks like Bootstrap & Tailwind','Mentored students through individual projects and helped debug their code hands-on']]
+];
+const hd=['bg-neo-sec','bg-neo-accent','bg-white'],rot=['-rotate-1','rotate-1','-rotate-1'];
+$('#exp-list').innerHTML=exp.map((e,i)=>`<article class="card b bg-white sh-l ${rot[i]} ${i%2?'md:ml-12':'md:mr-12'}">
+ <div class="bb ${hd[i]} px-5 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3"><h3 class="font-black uppercase tracking-tighter text-2xl sm:text-3xl leading-none">${e[0]}</h3><span class="badge bg-white rotate-3">IT Trainer</span></div>
+ <div class="p-5 sm:p-6"><p class="font-black uppercase tracking-widest text-sm mb-4"><i class="fa-solid fa-location-dot"></i> ${e[1]}</p>
+ <ul class="space-y-3 text-base sm:text-lg leading-snug">${e[2].map(x=>`<li class="flex gap-3"><i class="fa-solid fa-star mt-1.5 text-sm shrink-0"></i><span>${x}</span></li>`).join('')}</ul></div></article>`).join('');
 
-                // Redraw active and resting state styles of the pagination pills
-                indicatorDots.forEach((dot, index) => {
-                    if (index === currentSlide) {
-                        dot.classList.add('active-dot', 'bg-primary');
-                        dot.classList.remove('w-6', 'bg-surface');
-                    } else {
-                        dot.classList.remove('active-dot', 'bg-primary');
-                        dot.classList.add('w-6', 'bg-surface');
-                    }
-                });
-            }
+/* Projects */
+const projects=[
+ ['AyoRental','bg-neo-accent','https://github.com/Qaidy/AyoRental','AyoRental is a web-based car rental platform that allows users to browse, book, and rent cars with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Supabase for real-time data management.',['assets/rental.png']],
+ ['Blossom','bg-neo-sec','https://github.com/Qaidy/Blossom.git','Blossom is an e-commerce platform that allows users to browse, purchase, and manage their orders with ease. It features a modern, user-friendly interface with advanced filtering options and seamless integration with Stripe for real-time payment processing.',['assets/blossom.png']],
+ ['Vaultify','bg-neo-muted','https://github.com/Qaidy/vaultify.git','Vaultify is a production-ready, full-stack personal financial management platform designed to help users effortlessly track their wealth with real-time insights. Built with an emphasis on clean UI/UX and performance, it bridges the gap between complex financial tracking and intuitive design.',['assets/vault.png']],
+ ['Singer Explorer','bg-neo-accent','https://github.com/Qaidy/Singer-Explorer.git','Singer Explorer is a mobile application built with Flutter & Dart designed to discover and explore music artists, comprehensive singer profiles, biographies, and their top hit tracks. Features an intuitive mobile UI, smooth navigation, and artist cataloging.',['assets/home.png','assets/detail.png']],
+ ['Code Stash','bg-neo-sec','https://github.com/Qaidy/codestash','Code Stash is a developer-focused snippet management tool designed to help programmers save, organize, and quickly retrieve reusable code snippets. Built for efficiency and clarity, it streamlines the workflow for developers who want to keep their best code at their fingertips.',['assets/codestash.png']]
+];
+$('#track').innerHTML=projects.map((p,i)=>{
+ const imgs=p[4].length>1
+  ? `<div class="flex items-center justify-center gap-4">${p[4].map((s,j)=>`<div class="w-1/2 max-w-[250px] b bg-white sh-m overflow-hidden ${j?'rotate-2':'-rotate-2'}"><img src="${s}" alt="${p[0]} screen ${j+1}" class="w-full h-auto block"></div>`).join('')}</div>`
+  : `<div class="b bg-white sh-m overflow-hidden ${i%2?'rotate-1':'-rotate-1'}"><img src="${p[4][0]}" alt="${p[0]} preview" class="w-full h-auto block" onerror="this.src='https://placehold.co/800x600/FFD93D/000000?text=${encodeURIComponent(p[0])}'"></div>`;
+ return `<div class="w-full shrink-0 px-2 pb-4"><div class="b bg-white sh-l">
+  <div class="bb ${p[1]} px-4 sm:px-6 py-3 flex items-center justify-between gap-3"><span class="badge bg-white -rotate-2">Project #${i+1}</span><span class="flex gap-2" aria-hidden="true"><span class="w-4 h-4 b bg-white rounded-full"></span><span class="w-4 h-4 b bg-white"></span><span class="w-4 h-4 b bg-black rounded-full"></span></span></div>
+  <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center p-6 sm:p-10">
+   <div class="lg:col-span-2 flex flex-col items-start gap-5">
+    <h3 class="font-black uppercase tracking-tighter leading-[0.85] text-4xl sm:text-6xl">${p[0]}</h3>
+    <p class="text-lg leading-snug">${p[3]}</p>
+    <a href="${p[2]}" target="_blank" rel="noopener noreferrer" class="btn bg-neo-sec w-full sm:w-auto">More detail <i class="fa-solid fa-arrow-right"></i></a>
+   </div>
+   <div class="lg:col-span-3 py-2">${imgs}</div></div></div></div>`}).join('');
 
-            nextBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSliderPosition();
-            });
+let cur=0;const N=projects.length,track=$('#track'),dots=$('#dots');
+dots.innerHTML=projects.map((_,i)=>`<button class="dot" data-i="${i}" aria-label="Go to project ${i+1}"></button>`).join('');
+function go(i){cur=(i+N)%N;track.style.transform=`translateX(-${cur*100}%)`;$$('.dot').forEach((d,j)=>d.classList.toggle('on',j===cur))}
+$('#next').onclick=()=>go(cur+1);$('#prev').onclick=()=>go(cur-1);
+dots.onclick=e=>{const b=e.target.closest('.dot');if(b)go(+b.dataset.i)};
+let sx=0;const sl=$('#slider');
+sl.addEventListener('touchstart',e=>sx=e.changedTouches[0].screenX,{passive:true});
+sl.addEventListener('touchend',e=>{const d=sx-e.changedTouches[0].screenX;if(Math.abs(d)>50)go(cur+(d>0?1:-1))},{passive:true});
+go(0);
 
-            prevBtn.addEventListener('click', () => {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateSliderPosition();
-            });
+/* Mobile menu */
+const mm=$('#mobile-menu'),mb=$('#menu-btn');
+function setMenu(o){mm.classList.toggle('hidden',!o);mb.setAttribute('aria-expanded',o);mb.firstElementChild.className='fa-solid text-xl '+(o?'fa-xmark':'fa-bars')}
+mb.onclick=()=>setMenu(mm.classList.contains('hidden'));
+$$('.mnav').forEach(a=>a.onclick=()=>setMenu(false));
 
-            // Bind click events on dot indicators for tactile control
-            indicatorDots.forEach(dot => {
-                dot.addEventListener('click', (e) => {
-                    const selectedIndex = parseInt(e.target.getAttribute('data-index'));
-                    currentSlide = selectedIndex;
-                    updateSliderPosition();
-                });
-            });
-
-            // Touch Swipe Implementation for Mobile Experience
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            const sliderContainer = document.getElementById('project-slider-container');
-
-            sliderContainer.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            sliderContainer.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, { passive: true });
-
-            function handleSwipe() {
-                const threshold = 50; // Minimum swipe distance in pixels
-                if (touchStartX - touchEndX > threshold) {
-                    // Swipe Left -> Next Project
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateSliderPosition();
-                } else if (touchEndX - touchStartX > threshold) {
-                    // Swipe Right -> Prev Project
-                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                    updateSliderPosition();
-                }
-            }
-
-            // Initial alignment check
-            updateSliderPosition();
-
-            // --- Hire Me Modal Logic ---
-            const hireModal = document.getElementById('hire-modal');
-            const hireModalBox = document.getElementById('hire-modal-box');
-            const closeHireModalBtn = document.getElementById('close-hire-modal');
-            const openHireModalBtns = document.querySelectorAll('.open-hire-modal');
-            const copyPhoneBtn = document.getElementById('copy-phone-btn');
-            const copyEmailBtn = document.getElementById('copy-email-btn');
-            const copyToast = document.getElementById('copy-toast');
-            let toastTimeout = null;
-
-            function openModal() {
-                if (!hireModal) return;
-                hireModal.classList.remove('opacity-0', 'pointer-events-none');
-                hireModalBox.classList.remove('scale-95');
-                hireModalBox.classList.add('scale-100');
-                document.body.classList.add('overflow-hidden');
-            }
-
-            function closeModal() {
-                if (!hireModal) return;
-                hireModal.classList.add('opacity-0', 'pointer-events-none');
-                hireModalBox.classList.remove('scale-100');
-                hireModalBox.classList.add('scale-95');
-                document.body.classList.remove('overflow-hidden');
-            }
-
-            openHireModalBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (isMenuOpen && typeof toggleMenu === 'function') {
-                        toggleMenu();
-                    }
-                    openModal();
-                });
-            });
-
-            if (closeHireModalBtn) {
-                closeHireModalBtn.addEventListener('click', closeModal);
-            }
-
-            if (hireModal) {
-                hireModal.addEventListener('click', (e) => {
-                    if (e.target === hireModal) {
-                        closeModal();
-                    }
-                });
-            }
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && hireModal && !hireModal.classList.contains('pointer-events-none')) {
-                    closeModal();
-                }
-            });
-
-            function showCopyFeedback(message) {
-                if (!copyToast) return;
-                copyToast.textContent = message;
-                copyToast.classList.remove('hidden');
-                if (toastTimeout) clearTimeout(toastTimeout);
-                toastTimeout = setTimeout(() => {
-                    copyToast.classList.add('hidden');
-                }, 2200);
-            }
-
-            function copyToClipboard(text, message) {
-                if (navigator.clipboard && window.isSecureContext) {
-                    navigator.clipboard.writeText(text).then(() => {
-                        showCopyFeedback(message);
-                    }).catch(() => {
-                        fallbackCopy(text, message);
-                    });
-                } else {
-                    fallbackCopy(text, message);
-                }
-            }
-
-            function fallbackCopy(text, message) {
-                const tempInput = document.createElement('textarea');
-                tempInput.value = text;
-                tempInput.style.position = 'fixed';
-                tempInput.style.opacity = '0';
-                document.body.appendChild(tempInput);
-                tempInput.focus();
-                tempInput.select();
-                try {
-                    document.execCommand('copy');
-                    showCopyFeedback(message);
-                } catch (err) {
-                    console.error('Failed to copy', err);
-                }
-                document.body.removeChild(tempInput);
-            }
-
-            if (copyPhoneBtn) {
-                copyPhoneBtn.addEventListener('click', () => {
-                    copyToClipboard('085880675129', 'WhatsApp number copied to clipboard!');
-                });
-            }
-
-            if (copyEmailBtn) {
-                copyEmailBtn.addEventListener('click', () => {
-                    copyToClipboard('qaidyidn@gmail.com', 'Email copied to clipboard!');
-                });
-            }
-        };
-    </script>
+/* Modal + copy */
+const md=$('#modal'),box=$('#modal-box'),toast=$('#toast');let tt;
+function openM(){md.classList.remove('opacity-0','pointer-events-none');box.classList.replace('scale-95','scale-100');document.body.classList.add('overflow-hidden');$('#modal-close').focus()}
+function closeM(){md.classList.add('opacity-0','pointer-events-none');box.classList.replace('scale-100','scale-95');document.body.classList.remove('overflow-hidden')}
+$$('.open-hire').forEach(b=>b.onclick=e=>{e.preventDefault();setMenu(false);openM()});
+$('#modal-close').onclick=closeM;md.onclick=e=>{if(e.target===md)closeM()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+function flash(m){toast.textContent=m;toast.classList.remove('hidden');clearTimeout(tt);tt=setTimeout(()=>toast.classList.add('hidden'),2200)}
+function copy(t,m){
+ const fb=()=>{const a=document.createElement('textarea');a.value=t;a.style.cssText='position:fixed;opacity:0';document.body.appendChild(a);a.select();try{document.execCommand('copy');flash(m)}catch(e){}a.remove()};
+ if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(t).then(()=>flash(m)).catch(fb);else fb();
+}
+$$('.copy').forEach(b=>b.onclick=()=>copy(b.dataset.copy,b.dataset.msg));
+</script>
 </body>
-
 </html>
