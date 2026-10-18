@@ -752,6 +752,100 @@
         .exp-duties li { display: flex; gap: 8px; }
         .exp-duties li::before { content: "•"; color: var(--text-muted); }
 
+        /* Experience Documentation Gallery */
+        .exp-docs-section {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px dashed var(--border-subtle);
+        }
+        .exp-docs-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11.5px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .exp-docs-title span {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .exp-docs-hint {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        .exp-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .exp-photo-card {
+            position: relative;
+            aspect-ratio: 16 / 11;
+            border: 1px solid var(--border-subtle);
+            border-radius: 2px;
+            overflow: hidden;
+            background-color: var(--bg-main);
+            cursor: pointer;
+            transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .exp-photo-card:hover {
+            border-color: var(--border-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+        }
+        .exp-photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .exp-photo-card:hover img {
+            transform: scale(1.06);
+        }
+        .exp-photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 50%, transparent 100%);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 14px;
+            transition: opacity 0.2s ease;
+        }
+        .exp-photo-card:hover .exp-photo-overlay {
+            opacity: 1;
+        }
+        .exp-photo-badge {
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+            font-size: 10px;
+            font-family: var(--font-mono);
+            background: rgba(18, 17, 16, 0.85);
+            backdrop-filter: blur(4px);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 1px 6px;
+            border-radius: 2px;
+            pointer-events: none;
+            transition: all 0.15s ease;
+        }
+        .exp-photo-card:hover .exp-photo-badge {
+            color: #ffffff;
+            border-color: var(--border-bright);
+        }
+
         /* Skills */
         .skills-grid {
             display: grid;
@@ -865,8 +959,8 @@
         .img-modal {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(8px);
             z-index: 300;
             display: none;
             align-items: center;
@@ -874,17 +968,59 @@
             padding: 24px;
         }
         .img-modal.active { display: flex; }
-        .img-modal img { max-width: 90vw; max-height: 85vh; object-fit: contain; border: 1px solid var(--border-bright); }
+        .img-modal-box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 92vw;
+            max-height: 88vh;
+        }
+        .img-modal-box img {
+            max-width: 92vw;
+            max-height: 80vh;
+            object-fit: contain;
+            border: 1px solid var(--border-bright);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.8);
+            border-radius: 2px;
+        }
+        .img-modal-caption {
+            margin-top: 12px;
+            font-size: 13px;
+            font-family: var(--font-mono);
+            color: var(--text-primary);
+            background: rgba(22, 21, 20, 0.94);
+            border: 1px solid var(--border-subtle);
+            padding: 6px 14px;
+            border-radius: 2px;
+            text-align: center;
+            display: none;
+        }
+        .img-modal-caption.show {
+            display: inline-block;
+        }
         .img-modal-close {
             position: absolute;
-            top: calc(24px + var(--safe-top));
+            top: calc(20px + var(--safe-top));
             right: 24px;
             color: #ffffff;
-            font-size: 24px;
+            font-size: 26px;
             cursor: pointer;
-            background: none;
-            border: none;
-            padding: 8px;
+            background: rgba(22, 21, 20, 0.7);
+            border: 1px solid var(--border-subtle);
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            padding: 0;
+            transition: all 0.15s ease;
+            z-index: 310;
+        }
+        .img-modal-close:hover {
+            border-color: var(--border-bright);
+            background: var(--bg-card-hover);
         }
 
         /* =====================================================
@@ -952,6 +1088,7 @@
             .project-actions .btn-secondary { flex: 1; justify-content: center; }
 
             .exp-header { flex-direction: column; align-items: flex-start; gap: 2px; }
+            .exp-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             .skills-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
 
             .subscribe-box { padding: 20px; }
@@ -967,6 +1104,8 @@
         @media (max-width: 380px) {
             .page-btn { padding: 8px 7px; }
             .hero-title { letter-spacing: -0.02em; }
+            .exp-gallery-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .exp-docs-hint { display: none; }
             .skills-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -1261,6 +1400,35 @@
                                 <li>Guided students in building their first responsive web pages from scratch.</li>
                                 <li>Introduced modern front-end frameworks and clean development practices.</li>
                             </ul>
+
+                            <div class="exp-docs-section">
+                                <div class="exp-docs-title">
+                                    <span><i class="fa-solid fa-camera"></i> Training Documentation</span>
+                                    <span class="exp-docs-hint">Click photo to enlarge</span>
+                                </div>
+                                <div class="exp-gallery-grid">
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_011523667.jpg', 'SMPIT Persada Bhakti — IT Training Session [01]')">
+                                        <img src="assets/Persada Bhakti/PXL_20250916_011523667.jpg" alt="Mentoring students at SMPIT Persada Bhakti" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#01</span>
+                                    </div>
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_021830871.jpg', 'SMPIT Persada Bhakti — IT Training Session [02]')">
+                                        <img src="assets/Persada Bhakti/PXL_20250916_021830871.jpg" alt="Classroom hands-on coding at SMPIT Persada Bhakti" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#02</span>
+                                    </div>
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_034116762.jpg', 'SMPIT Persada Bhakti — IT Training Session [03]')">
+                                        <img src="assets/Persada Bhakti/PXL_20250916_034116762.jpg" alt="Guiding project implementation at SMPIT Persada Bhakti" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#03</span>
+                                    </div>
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_040105339.jpg', 'SMPIT Persada Bhakti — IT Training Session [04]')">
+                                        <img src="assets/Persada Bhakti/PXL_20250916_040105339.jpg" alt="Documentation with students at SMPIT Persada Bhakti" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#04</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="exp-item">
@@ -1274,6 +1442,35 @@
                                 <li>Taught CSS frameworks including Tailwind CSS and Bootstrap.</li>
                                 <li>Mentored students through debugging sessions and project code reviews.</li>
                             </ul>
+
+                            <div class="exp-docs-section">
+                                <div class="exp-docs-title">
+                                    <span><i class="fa-solid fa-camera"></i> Training Documentation</span>
+                                    <span class="exp-docs-hint">Click photo to enlarge</span>
+                                </div>
+                                <div class="exp-gallery-grid">
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG-20250929-WA0010.jpg', 'SMPIT Cikal Harapan — IT Training Session [01]')">
+                                        <img src="assets/Cikal Harapan/IMG-20250929-WA0010.jpg" alt="Web development workshop at SMPIT Cikal Harapan" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#01</span>
+                                    </div>
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG-20250929-WA0022.jpg', 'SMPIT Cikal Harapan — IT Training Session [02]')">
+                                        <img src="assets/Cikal Harapan/IMG-20250929-WA0022.jpg" alt="Students learning modern CSS at SMPIT Cikal Harapan" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#02</span>
+                                    </div>
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG-20250929-WA0031.jpg', 'SMPIT Cikal Harapan — IT Training Session [03]')">
+                                        <img src="assets/Cikal Harapan/IMG-20250929-WA0031.jpg" alt="Project presentation at SMPIT Cikal Harapan" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#03</span>
+                                    </div>
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG_6697.jpg', 'SMPIT Cikal Harapan — IT Training Session [04]')">
+                                        <img src="assets/Cikal Harapan/IMG_6697.jpg" alt="Documentation with class at SMPIT Cikal Harapan" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#04</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="exp-item">
@@ -1287,6 +1484,35 @@
                                 <li>Assisted students in understanding client-server logic and database principles.</li>
                                 <li>Created structured curriculums tailored to varying technical skill levels.</li>
                             </ul>
+
+                            <div class="exp-docs-section">
+                                <div class="exp-docs-title">
+                                    <span><i class="fa-solid fa-camera"></i> Training Documentation</span>
+                                    <span class="exp-docs-hint">Click photo to enlarge</span>
+                                </div>
+                                <div class="exp-gallery-grid">
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/IMG-20260212-WA0006.jpg', 'SMAN 3 Yogyakarta — IT Training Session [01]')">
+                                        <img src="assets/SMAN 3/IMG-20260212-WA0006.jpg" alt="IT Training lecture at SMAN 3 Yogyakarta" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#01</span>
+                                    </div>
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/PXL_20260211_055144154.jpg', 'SMAN 3 Yogyakarta — IT Training Session [02]')">
+                                        <img src="assets/SMAN 3/PXL_20260211_055144154.jpg" alt="Interactive programming lab at SMAN 3 Yogyakarta" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#02</span>
+                                    </div>
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/PXL_20260212_062825847.MP~2.jpg', 'SMAN 3 Yogyakarta — IT Training Session [03]')">
+                                        <img src="assets/SMAN 3/PXL_20260212_062825847.MP~2.jpg" alt="Mentoring students in lab at SMAN 3 Yogyakarta" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#03</span>
+                                    </div>
+                                    <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/PXL_20260212_065454399.jpg', 'SMAN 3 Yogyakarta — IT Training Session [04]')">
+                                        <img src="assets/SMAN 3/PXL_20260212_065454399.jpg" alt="Group photo with trainees at SMAN 3 Yogyakarta" loading="lazy">
+                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                        <span class="exp-photo-badge">#04</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1452,7 +1678,10 @@
 
     <div id="img-modal" class="img-modal" onclick="closeImageModal()">
         <button class="img-modal-close" onclick="closeImageModal()">&times;</button>
-        <img id="img-modal-target" src="" alt="Zoom preview" onclick="event.stopPropagation()">
+        <div class="img-modal-box" onclick="event.stopPropagation()">
+            <img id="img-modal-target" src="" alt="Zoom preview">
+            <div id="img-modal-caption" class="img-modal-caption"></div>
+        </div>
     </div>
 
     <script>
@@ -1602,7 +1831,7 @@
         document.addEventListener('touchend', (e) => {
             const drawer = document.getElementById('mobile-nav-drawer');
             if (drawer && drawer.classList.contains('open')) return;
-            if (e.target.closest('.project-tabs, .nav-links, .tech-logos-row, .img-modal, .mobile-nav-drawer, input')) return;
+            if (e.target.closest('.project-tabs, .nav-links, .tech-logos-row, .img-modal, .mobile-nav-drawer, input, .exp-gallery-grid')) return;
             const dx = e.changedTouches[0].clientX - touchX;
             const dy = e.changedTouches[0].clientY - touchY;
             if (Math.abs(dx) > 80 && Math.abs(dy) < 50) {
@@ -1673,8 +1902,21 @@
             input.value = "";
         }
 
-        function openImageModal() {
-            document.getElementById('img-modal-target').src = document.getElementById('project-main-img').src;
+        function openImageModal(src, caption) {
+            const target = document.getElementById('img-modal-target');
+            const cap = document.getElementById('img-modal-caption');
+            const projectImg = document.getElementById('project-main-img');
+
+            target.src = src || (projectImg ? projectImg.src : '');
+            
+            if (caption) {
+                cap.textContent = caption;
+                cap.classList.add('show');
+            } else {
+                cap.textContent = '';
+                cap.classList.remove('show');
+            }
+
             document.getElementById('img-modal').classList.add('active');
         }
 
