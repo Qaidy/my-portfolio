@@ -742,7 +742,7 @@
             transition: border-color 0.15s ease;
             /* Render hanya saat mendekati viewport -> scroll jauh lebih ringan */
             content-visibility: auto;
-            contain-intrinsic-size: auto 620px;
+            contain-intrinsic-size: auto 260px;
         }
         .exp-item:hover { border-color: var(--border-bright); }
         .exp-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
@@ -753,35 +753,63 @@
         .exp-duties li { display: flex; gap: 8px; }
         .exp-duties li::before { content: "•"; color: var(--text-muted); }
 
-        /* Experience Documentation Gallery */
+        /* Experience Documentation Gallery (toggle) */
         .exp-docs-section {
             margin-top: 18px;
             padding-top: 16px;
             border-top: 1px dashed var(--border-subtle);
         }
-        .exp-docs-title {
+
+        .exp-docs-toggle {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 11.5px;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            gap: 10px;
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--border-bright);
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: border-color 0.15s ease, background-color 0.15s ease;
+            touch-action: manipulation;
         }
-        .exp-docs-title span {
+        .exp-docs-toggle:hover { border-color: #ffffff; background-color: var(--bg-card-hover); }
+        .exp-docs-toggle .toggle-left {
             display: inline-flex;
             align-items: center;
-            gap: 7px;
-            color: var(--text-primary);
-            font-weight: 600;
+            gap: 8px;
         }
+        .exp-docs-toggle .toggle-count {
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 11.5px;
+        }
+        .exp-docs-toggle .toggle-chevron {
+            color: var(--text-muted);
+            font-size: 12px;
+            transition: transform 0.2s ease, color 0.15s ease;
+        }
+        .exp-docs-section.open .exp-docs-toggle { border-color: #ededec; }
+        .exp-docs-section.open .toggle-chevron { transform: rotate(180deg); color: #ffffff; }
+
+        .exp-docs-content {
+            display: none;
+            margin-top: 14px;
+        }
+        .exp-docs-section.open .exp-docs-content { display: block; }
+
         .exp-docs-hint {
+            display: block;
             font-size: 11px;
             color: var(--text-muted);
-            text-transform: none;
-            letter-spacing: normal;
+            margin-bottom: 10px;
         }
+
         .exp-gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1095,7 +1123,7 @@
             .page-btn { padding: 8px 7px; }
             .hero-title { letter-spacing: -0.02em; }
             .exp-gallery-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
-            .exp-docs-hint { display: none; }
+            .exp-docs-toggle .toggle-count { display: none; }
             .skills-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -1378,6 +1406,7 @@
                             Educating future developers and driving software training initiatives across schools in Indonesia.
                         </p>
 
+                        <!-- IT Trainer 1 -->
                         <div class="exp-item">
                             <div class="exp-header">
                                 <span class="exp-role">IT Trainer</span>
@@ -1391,35 +1420,43 @@
                             </ul>
 
                             <div class="exp-docs-section">
-                                <div class="exp-docs-title">
-                                    <span><i class="fa-solid fa-camera"></i> Training Documentation</span>
+                                <button type="button" class="exp-docs-toggle" onclick="toggleDocs(this)" aria-expanded="false">
+                                    <span class="toggle-left">
+                                        <i class="fa-solid fa-camera"></i>
+                                        <span class="toggle-label">Show Documentation</span>
+                                        <span class="toggle-count">(4 photos)</span>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                                </button>
+                                <div class="exp-docs-content">
                                     <span class="exp-docs-hint">Click photo to enlarge</span>
-                                </div>
-                                <div class="exp-gallery-grid">
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_011523667.jpg', 'SMPIT Persada Bhakti — IT Training Session [01]')">
-                                        <img src="assets/Persada Bhakti/PXL_20250916_011523667.jpg" alt="Mentoring students at SMPIT Persada Bhakti" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#01</span>
-                                    </div>
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_021830871.jpg', 'SMPIT Persada Bhakti — IT Training Session [02]')">
-                                        <img src="assets/Persada Bhakti/PXL_20250916_021830871.jpg" alt="Classroom hands-on coding at SMPIT Persada Bhakti" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#02</span>
-                                    </div>
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_034116762.jpg', 'SMPIT Persada Bhakti — IT Training Session [03]')">
-                                        <img src="assets/Persada Bhakti/PXL_20250916_034116762.jpg" alt="Guiding project implementation at SMPIT Persada Bhakti" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#03</span>
-                                    </div>
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_040105339.jpg', 'SMPIT Persada Bhakti — IT Training Session [04]')">
-                                        <img src="assets/Persada Bhakti/PXL_20250916_040105339.jpg" alt="Documentation with students at SMPIT Persada Bhakti" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#04</span>
+                                    <div class="exp-gallery-grid">
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_011523667.jpg', 'SMPIT Persada Bhakti — IT Training Session [01]')">
+                                            <img src="assets/Persada Bhakti/PXL_20250916_011523667.jpg" alt="Mentoring students at SMPIT Persada Bhakti" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#01</span>
+                                        </div>
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_021830871.jpg', 'SMPIT Persada Bhakti — IT Training Session [02]')">
+                                            <img src="assets/Persada Bhakti/PXL_20250916_021830871.jpg" alt="Classroom hands-on coding at SMPIT Persada Bhakti" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#02</span>
+                                        </div>
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_034116762.jpg', 'SMPIT Persada Bhakti — IT Training Session [03]')">
+                                            <img src="assets/Persada Bhakti/PXL_20250916_034116762.jpg" alt="Guiding project implementation at SMPIT Persada Bhakti" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#03</span>
+                                        </div>
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/Persada Bhakti/PXL_20250916_040105339.jpg', 'SMPIT Persada Bhakti — IT Training Session [04]')">
+                                            <img src="assets/Persada Bhakti/PXL_20250916_040105339.jpg" alt="Documentation with students at SMPIT Persada Bhakti" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#04</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- IT Trainer 2 -->
                         <div class="exp-item">
                             <div class="exp-header">
                                 <span class="exp-role">IT Trainer</span>
@@ -1433,35 +1470,43 @@
                             </ul>
 
                             <div class="exp-docs-section">
-                                <div class="exp-docs-title">
-                                    <span><i class="fa-solid fa-camera"></i> Training Documentation</span>
+                                <button type="button" class="exp-docs-toggle" onclick="toggleDocs(this)" aria-expanded="false">
+                                    <span class="toggle-left">
+                                        <i class="fa-solid fa-camera"></i>
+                                        <span class="toggle-label">Show Documentation</span>
+                                        <span class="toggle-count">(4 photos)</span>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                                </button>
+                                <div class="exp-docs-content">
                                     <span class="exp-docs-hint">Click photo to enlarge</span>
-                                </div>
-                                <div class="exp-gallery-grid">
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG-20250929-WA0010.jpg', 'SMPIT Cikal Harapan — IT Training Session [01]')">
-                                        <img src="assets/Cikal Harapan/IMG-20250929-WA0010.jpg" alt="Web development workshop at SMPIT Cikal Harapan" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#01</span>
-                                    </div>
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG-20250929-WA0022.jpg', 'SMPIT Cikal Harapan — IT Training Session [02]')">
-                                        <img src="assets/Cikal Harapan/IMG-20250929-WA0022.jpg" alt="Students learning modern CSS at SMPIT Cikal Harapan" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#02</span>
-                                    </div>
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG-20250929-WA0031.jpg', 'SMPIT Cikal Harapan — IT Training Session [03]')">
-                                        <img src="assets/Cikal Harapan/IMG-20250929-WA0031.jpg" alt="Project presentation at SMPIT Cikal Harapan" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#03</span>
-                                    </div>
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG_6697.jpg', 'SMPIT Cikal Harapan — IT Training Session [04]')">
-                                        <img src="assets/Cikal Harapan/IMG_6697.jpg" alt="Documentation with class at SMPIT Cikal Harapan" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#04</span>
+                                    <div class="exp-gallery-grid">
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG-20250929-WA0010.jpg', 'SMPIT Cikal Harapan — IT Training Session [01]')">
+                                            <img src="assets/Cikal Harapan/IMG-20250929-WA0010.jpg" alt="Web development workshop at SMPIT Cikal Harapan" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#01</span>
+                                        </div>
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG-20250929-WA0022.jpg', 'SMPIT Cikal Harapan — IT Training Session [02]')">
+                                            <img src="assets/Cikal Harapan/IMG-20250929-WA0022.jpg" alt="Students learning modern CSS at SMPIT Cikal Harapan" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#02</span>
+                                        </div>
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG-20250929-WA0031.jpg', 'SMPIT Cikal Harapan — IT Training Session [03]')">
+                                            <img src="assets/Cikal Harapan/IMG-20250929-WA0031.jpg" alt="Project presentation at SMPIT Cikal Harapan" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#03</span>
+                                        </div>
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/Cikal Harapan/IMG_6697.jpg', 'SMPIT Cikal Harapan — IT Training Session [04]')">
+                                            <img src="assets/Cikal Harapan/IMG_6697.jpg" alt="Documentation with class at SMPIT Cikal Harapan" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#04</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- IT Trainer 3 -->
                         <div class="exp-item">
                             <div class="exp-header">
                                 <span class="exp-role">IT Trainer</span>
@@ -1475,30 +1520,37 @@
                             </ul>
 
                             <div class="exp-docs-section">
-                                <div class="exp-docs-title">
-                                    <span><i class="fa-solid fa-camera"></i> Training Documentation</span>
+                                <button type="button" class="exp-docs-toggle" onclick="toggleDocs(this)" aria-expanded="false">
+                                    <span class="toggle-left">
+                                        <i class="fa-solid fa-camera"></i>
+                                        <span class="toggle-label">Show Documentation</span>
+                                        <span class="toggle-count">(4 photos)</span>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down toggle-chevron"></i>
+                                </button>
+                                <div class="exp-docs-content">
                                     <span class="exp-docs-hint">Click photo to enlarge</span>
-                                </div>
-                                <div class="exp-gallery-grid">
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/IMG-20260212-WA0006.jpg', 'SMAN 3 Yogyakarta — IT Training Session [01]')">
-                                        <img src="assets/SMAN 3/IMG-20260212-WA0006.jpg" alt="IT Training lecture at SMAN 3 Yogyakarta" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#01</span>
-                                    </div>
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/PXL_20260211_055144154.jpg', 'SMAN 3 Yogyakarta — IT Training Session [02]')">
-                                        <img src="assets/SMAN 3/PXL_20260211_055144154.jpg" alt="Interactive programming lab at SMAN 3 Yogyakarta" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#02</span>
-                                    </div>
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/PXL_20260212_062825847.MP~2.jpg', 'SMAN 3 Yogyakarta — IT Training Session [03]')">
-                                        <img src="assets/SMAN 3/PXL_20260212_062825847.MP~2.jpg" alt="Mentoring students in lab at SMAN 3 Yogyakarta" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#03</span>
-                                    </div>
-                                    <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/PXL_20260212_065454399.jpg', 'SMAN 3 Yogyakarta — IT Training Session [04]')">
-                                        <img src="assets/SMAN 3/PXL_20260212_065454399.jpg" alt="Group photo with trainees at SMAN 3 Yogyakarta" width="400" height="275" loading="lazy" decoding="async">
-                                        <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
-                                        <span class="exp-photo-badge">#04</span>
+                                    <div class="exp-gallery-grid">
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/IMG-20260212-WA0006.jpg', 'SMAN 3 Yogyakarta — IT Training Session [01]')">
+                                            <img src="assets/SMAN 3/IMG-20260212-WA0006.jpg" alt="IT Training lecture at SMAN 3 Yogyakarta" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#01</span>
+                                        </div>
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/PXL_20260211_055144154.jpg', 'SMAN 3 Yogyakarta — IT Training Session [02]')">
+                                            <img src="assets/SMAN 3/PXL_20260211_055144154.jpg" alt="Interactive programming lab at SMAN 3 Yogyakarta" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#02</span>
+                                        </div>
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/PXL_20260212_062825847.MP~2.jpg', 'SMAN 3 Yogyakarta — IT Training Session [03]')">
+                                            <img src="assets/SMAN 3/PXL_20260212_062825847.MP~2.jpg" alt="Mentoring students in lab at SMAN 3 Yogyakarta" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#03</span>
+                                        </div>
+                                        <div class="exp-photo-card" onclick="openImageModal('assets/SMAN 3/PXL_20260212_065454399.jpg', 'SMAN 3 Yogyakarta — IT Training Session [04]')">
+                                            <img src="assets/SMAN 3/PXL_20260212_065454399.jpg" alt="Group photo with trainees at SMAN 3 Yogyakarta" width="400" height="275" loading="lazy" decoding="async">
+                                            <div class="exp-photo-overlay"><i class="fa-solid fa-expand"></i></div>
+                                            <span class="exp-photo-badge">#04</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1848,6 +1900,14 @@
 
             document.getElementById('project-tags-box').innerHTML =
                 project.tags.map(t => `<span class="project-tag">${t}</span>`).join('');
+        }
+
+        // Toggle dokumentasi IT Trainer
+        function toggleDocs(btn) {
+            const section = btn.closest('.exp-docs-section');
+            const isOpen = section.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen);
+            btn.querySelector('.toggle-label').textContent = isOpen ? 'Hide Documentation' : 'Show Documentation';
         }
 
         function toggleFaq(header) {
